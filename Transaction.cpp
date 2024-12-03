@@ -3,17 +3,32 @@
 //
 
 #include "Transaction.h"
+#include <fstream>
+#include <iostream>
 
-Transaction::Transaction(double id, int amount, bool type) : id(id), amount(amount), type(type) {}
+Transaction::Transaction(int id, double amount, bool type) : id(id), amount(amount), type(type) {}
 
-double Transaction::getId() const {
+int Transaction::getId() const {
     return id;
 }
 
-int Transaction::getAmount() const {
+double Transaction::getAmount() const {
     return amount;
 }
 
 bool Transaction::getType() const {
     return type;
+}
+
+void Transaction::writeToFile(const string& filename) const {
+    ofstream file(filename, ios::app);
+    if (file.is_open()) {
+        file << "Transaction ID: " << id << "\n";
+        file << "Amount: " << amount << "\n";
+        file << "Type: " << (type ? "Entrata" : "Uscita") << "\n";
+        file << "----------------------" << "\n";
+        file.close();
+    } else {
+        cerr << "Errore: impossibile aprire il file " << filename << endl;
+    }
 }

@@ -1,0 +1,9 @@
+# ninja log v6
+13	765	7549675124928282	CMakeFiles/Elaborato.dir/main.cpp.obj	989dec673ae9646a
+709	1027	7549671288041653	Elaborato.exe	f219209ea99dc4f3
+13	655	7549678900946629	build.ninja	4d007c6d881abf9f
+6	1074	7549678901603216	CMakeFiles/Elaborato.dir/Transaction.cpp.obj	32dcf6ff45ff04c
+21	1219	7549678901752078	CMakeFiles/Elaborato.dir/BankAccount.cpp.obj	ee263f4411bcf66a
+1219	1715	7549678913723140	Elaborato.exe	bf38b9205b521fb4
+7	897	7549679827392281	CMakeFiles/Elaborato.dir/main.cpp.obj	989dec673ae9646a
+898	1312	7549679836299672	Elaborato.exe	bf38b9205b521fb4

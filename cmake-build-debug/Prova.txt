@@ -1,0 +1,24 @@
+IBAN: IT60X0542811101000000123456
+Balance: 1000
+----------------------
+----------------------
+Transaction ID: 12345
+Amount: 300
+Type: Entrata
+----------------------
+Transaction ID: 56789
+Amount: 100
+Type: Uscita
+----------------------
+IBAN: IT60X0542811101000000123456
+Balance: 1200
+----------------------
+Transaction ID: 12345
+Amount: 300
+Type: Entrata
+----------------------
+Transaction ID: 56789
+Amount: 100
+Type: Uscita
+----------------------
+----------------------

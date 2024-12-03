@@ -5,20 +5,26 @@
 #ifndef ELABORATO_TRANSACTION_H
 #define ELABORATO_TRANSACTION_H
 
+#include <string>
+
+using namespace std;
+
 class Transaction {
 public:
 
-    Transaction(double id, int amount, bool type);
+    Transaction(int id, double amount, bool type);
 
-    double getId() const;
+    int getId() const;
 
-    int getAmount() const;
+    double getAmount() const;
 
     bool getType() const;
 
+    void writeToFile(const string& filename) const;
+
 private:
-    double id;
-    int amount;
+    int id;
+    double amount;
     bool type; // 0 = uscita, 1 = entrata
 
 };

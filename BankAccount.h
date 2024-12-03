@@ -21,6 +21,10 @@ public:
 
     vector<Transaction> getTransactions() const;
 
+    void writeToFile(const string& filename) const;
+
+    void addTransaction(const Transaction& transaction);
+
 private:
     string iban;
     double balance;

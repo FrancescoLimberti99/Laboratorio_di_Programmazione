@@ -1,0 +1,3 @@
+C:/Users/Home PC/Desktop/FRANCY/Scuola/Universita/Laboratorio di programmazione/Elaborato/cmake-build-debug/CMakeFiles/Elaborato.dir
+C:/Users/Home PC/Desktop/FRANCY/Scuola/Universita/Laboratorio di programmazione/Elaborato/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Home PC/Desktop/FRANCY/Scuola/Universita/Laboratorio di programmazione/Elaborato/cmake-build-debug/CMakeFiles/rebuild_cache.dir

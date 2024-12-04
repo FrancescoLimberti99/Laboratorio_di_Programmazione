@@ -23,9 +23,10 @@ bool Transaction::getType() const {
 void Transaction::writeToFile(const string& filename) const {
     ofstream file(filename, ios::app);
     if (file.is_open()) {
-        file << "Transaction ID: " << id << "\n";
-        file << "Amount: " << amount << "\n";
-        file << "Type: " << (type ? "Entrata" : "Uscita") << "\n";
+        file << "Transaction:" << "\n";
+        file << "- ID: " << id << "\n";
+        file << "- Amount: " << amount << "\n";
+        file << "- Type: " << (type ? "Incoming" : "Outcoming") << "\n";
         file << "----------------------" << "\n";
         file.close();
     } else {

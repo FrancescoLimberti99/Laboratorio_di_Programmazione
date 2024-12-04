@@ -4,7 +4,10 @@
 
 #include "BankAccount.h"
 #include <fstream>
+#include <sstream>
 #include <iostream>
+#include <stdexcept>
+#include <cstdlib>
 
 using namespace std;
 
@@ -26,15 +29,17 @@ vector<Transaction> BankAccount::getTransactions() const {
 void BankAccount::writeToFile(const string& filename) const {
     ofstream file(filename, ios::app);
     if (file.is_open()) {
+        file << "Bank Account:" << "\n";
+        file << "-- General Info:" << "\n";
         file << "IBAN: " << iban << "\n";
         file << "Balance: " << balance << "\n";
-        file << "----------------------" << "\n";
+        file << "-- Transactions:" << "\n";
 
         for (const auto& transaction : transactions) {
-            file << "Transaction ID: " << transaction.getId() << "\n";
-            file << "Amount: " << transaction.getAmount() << "\n";
-            file << "Type: " << (transaction.getType() ? "Entrata" : "Uscita") << "\n";
-            file << "----------------------" << "\n";
+            file << "Transaction:" << "\n";
+            file << "- ID: " << transaction.getId() << "\n";
+            file << "- Amount: " << transaction.getAmount() << "\n";
+            file << "- Type: " << (transaction.getType() ? "Incoming" : "Outcoming") << "\n";
         }
 
         file << "----------------------" << "\n";
@@ -52,5 +57,73 @@ void BankAccount::addTransaction(const Transaction& transaction) {
     } else {
         balance -= transaction.getAmount();
     }
+}
+
+void BankAccount::sendMoney(double amount, BankAccount& receiver) {
+    if (amount <= 0) {
+        throw invalid_argument("L'importo deve essere positivo.");
+    }
+    if (balance < amount) {
+        throw runtime_error("Saldo insufficiente per inviare il denaro.");
+    }
+
+
+    int transactionId = rand() % 90000 + 10000;
+
+    Transaction senderTransaction(transactionId, amount, false); // false = uscita
+    Transaction receiverTransaction(transactionId, amount, true); // true = entrata
+
+    addTransaction(senderTransaction);
+    receiver.addTransaction(receiverTransaction);
+}
+
+void BankAccount::readTransactionsFromFile(const string& filename) {
+    ifstream file(filename);
+    if (!file.is_open()) {
+        cerr << "Errore: impossibile aprire il file " << filename << endl;
+        return;
+    }
+
+    string line;
+    int transactionId;
+    double amount;
+    bool type;
+
+    while (getline(file, line)) {
+        if (line.find("Transaction:") != string::npos) {
+
+            getline(file, line);
+            stringstream ss(line);
+            string temp;
+            ss >> temp >> temp >> transactionId;
+
+            getline(file, line);
+            ss.clear();
+            ss.str(line);
+            ss >> temp >> temp >> amount;
+
+            getline(file, line);
+            ss.clear();
+            ss.str(line);
+            string typeStr;
+            ss >> temp >> temp >> typeStr;
+            type = (typeStr == "Incoming");
+
+            bool isDuplicate = false;
+            for (const auto& transaction : transactions) {
+                if (transaction.getId() == transactionId) {
+                    isDuplicate = true;
+                    break;
+                }
+            }
+
+            if (!isDuplicate) {
+                Transaction newTransaction(transactionId, amount, type);
+                addTransaction(newTransaction);
+            }
+        }
+    }
+
+    file.close();
 }
 

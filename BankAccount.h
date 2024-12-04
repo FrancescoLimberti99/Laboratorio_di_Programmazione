@@ -25,6 +25,10 @@ public:
 
     void addTransaction(const Transaction& transaction);
 
+    void sendMoney(double amount, BankAccount& receiver);
+
+    void readTransactionsFromFile(const string& filename);
+
 private:
     string iban;
     double balance;

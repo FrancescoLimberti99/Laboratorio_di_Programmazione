@@ -39,3 +39,7 @@
 952	1329	7550094408562814	Elaborato.exe	bf38b9205b521fb4
 8	971	7550096628653706	CMakeFiles/Elaborato.dir/BankAccount.cpp.obj	ee263f4411bcf66a
 972	1415	7550096638289365	Elaborato.exe	bf38b9205b521fb4
+24	1355	7550500656777511	CMakeFiles/Elaborato.dir/main.cpp.obj	989dec673ae9646a
+110	1518	7550500657631664	CMakeFiles/Elaborato.dir/BankAccount.cpp.obj	ee263f4411bcf66a
+79	1528	7550500657321679	CMakeFiles/Elaborato.dir/Transaction.cpp.obj	32dcf6ff45ff04c
+1528	2000	7550500671814230	Elaborato.exe	bf38b9205b521fb4

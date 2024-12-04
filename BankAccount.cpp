@@ -40,6 +40,7 @@ void BankAccount::writeToFile(const string& filename) const {
             file << "- ID: " << transaction.getId() << "\n";
             file << "- Amount: " << transaction.getAmount() << "\n";
             file << "- Type: " << (transaction.getType() ? "Incoming" : "Outcoming") << "\n";
+            file << "- Timestamp: " << transaction.getTimestamp() << "\n";
         }
 
         file << "----------------------" << "\n";
@@ -88,6 +89,7 @@ void BankAccount::readTransactionsFromFile(const string& filename) {
     int transactionId;
     double amount;
     bool type;
+    string timestamp;
 
     while (getline(file, line)) {
         if (line.find("Transaction:") != string::npos) {
@@ -109,6 +111,12 @@ void BankAccount::readTransactionsFromFile(const string& filename) {
             ss >> temp >> temp >> typeStr;
             type = (typeStr == "Incoming");
 
+            getline(file, line);
+            ss.clear();
+            ss.str(line);
+            ss >> temp >> temp;
+            getline(ss, timestamp);
+
             bool isDuplicate = false;
             for (const auto& transaction : transactions) {
                 if (transaction.getId() == transactionId) {
@@ -119,6 +127,7 @@ void BankAccount::readTransactionsFromFile(const string& filename) {
 
             if (!isDuplicate) {
                 Transaction newTransaction(transactionId, amount, type);
+                newTransaction.setTimestamp(timestamp);
                 addTransaction(newTransaction);
             }
         }

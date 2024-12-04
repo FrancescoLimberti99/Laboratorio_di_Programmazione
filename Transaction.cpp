@@ -5,8 +5,19 @@
 #include "Transaction.h"
 #include <fstream>
 #include <iostream>
+#include <sstream>
+#include <chrono>
+#include <iomanip>
 
-Transaction::Transaction(int id, double amount, bool type) : id(id), amount(amount), type(type) {}
+Transaction::Transaction(int id, double amount, bool type) : id(id), amount(amount), type(type) {
+
+    auto now = chrono::system_clock::now();
+    time_t now_time = chrono::system_clock::to_time_t(now);
+
+    stringstream ss;
+    ss << put_time(localtime(&now_time), "%d-%m-%Y %H:%M:%S");
+    timestamp = ss.str();
+}
 
 int Transaction::getId() const {
     return id;
@@ -20,6 +31,14 @@ bool Transaction::getType() const {
     return type;
 }
 
+string Transaction::getTimestamp() const {
+    return timestamp;
+}
+
+void Transaction::setTimestamp(const string& timestamp) {
+    this->timestamp = timestamp;
+}
+
 void Transaction::writeToFile(const string& filename) const {
     ofstream file(filename, ios::app);
     if (file.is_open()) {
@@ -27,6 +46,7 @@ void Transaction::writeToFile(const string& filename) const {
         file << "- ID: " << id << "\n";
         file << "- Amount: " << amount << "\n";
         file << "- Type: " << (type ? "Incoming" : "Outcoming") << "\n";
+        file << "- Timestamp: " << timestamp << "\n";
         file << "----------------------" << "\n";
         file.close();
     } else {

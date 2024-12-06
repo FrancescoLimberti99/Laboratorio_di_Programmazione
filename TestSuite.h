@@ -6,7 +6,6 @@
 #define ELABORATO_TESTSUITE_H
 
 #include <cxxtest/TestSuite.h>
-#include <cxxtest/TestTracker.h>
 #include "Transaction.h"
 #include "BankAccount.h"
 
@@ -15,7 +14,6 @@ public:
 
     void setUp();
 
-    // tearDown() viene chiamato dopo ogni test
     void tearDown();
 
     // Tests per la classe Transaction
@@ -24,8 +22,6 @@ public:
     void testTransactionTimestamp();
 
     void testTransactionWriteToFile();
-
-    void testTransaction();
 
     // Tests per la classe BankAccount
     void testBankAccountConstructor();
@@ -37,8 +33,6 @@ public:
     void testBankAccountWriteToFile();
 
     void testBankAccountReadTransactionsFromFile();
-
-    void testBankAccount();
 
 private:
     Transaction* t1;

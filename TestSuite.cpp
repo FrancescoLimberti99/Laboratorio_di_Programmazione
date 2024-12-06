@@ -36,12 +36,6 @@ void TestSuite::testTransactionWriteToFile() {
     t1->writeToFile("test_transaction_write.txt");
 }
 
-void TestSuite::testTransaction() {
-    testTransactionConstructor();
-    testTransactionTimestamp();
-    testTransactionWriteToFile();
-}
-
 void TestSuite::testBankAccountConstructor() {
     TS_ASSERT_EQUALS(sender->getIban(), "IT60X0542811101000000123456");
     TS_ASSERT_DELTA(sender->getBalance(), 1000.0, 0.01);
@@ -74,11 +68,3 @@ void TestSuite::testBankAccountReadTransactionsFromFile() {
     TS_ASSERT(sender->getTransactions().size() > 0); // Supponendo che il file contenga transazioni.
 }
 
-
-void TestSuite::testBankAccount() {
-    testBankAccountConstructor();
-    testBankAccountAddTransaction();
-    testBankAccountSendMoney();
-    testBankAccountWriteToFile();
-    testBankAccountReadTransactionsFromFile();
-}

@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: Elaborato
+# Project: Tests
 # Configurations: Debug
 # =============================================================================
 
@@ -70,13 +70,6 @@ build CMakeFiles/Elaborato.dir/BankAccount.cpp.obj: CXX_COMPILER__Elaborato_unsc
   OBJECT_DIR = CMakeFiles\Elaborato.dir
   OBJECT_FILE_DIR = CMakeFiles\Elaborato.dir
 
-build CMakeFiles/Elaborato.dir/TestSuite.cpp.obj: CXX_COMPILER__Elaborato_unscanned_Debug C$:/Users/Home$ PC/Desktop/FRANCY/Scuola/Universita/Laboratorio$ di$ programmazione/Elaborato/TestSuite.cpp || cmake_object_order_depends_target_Elaborato
-  DEP_FILE = CMakeFiles\Elaborato.dir\TestSuite.cpp.obj.d
-  FLAGS = -g -std=gnu++1z -fdiagnostics-color=always
-  INCLUDES = -IC:/Libraries/cxxtest/cxxtest-master
-  OBJECT_DIR = CMakeFiles\Elaborato.dir
-  OBJECT_FILE_DIR = CMakeFiles\Elaborato.dir
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Elaborato
@@ -85,10 +78,9 @@ build CMakeFiles/Elaborato.dir/TestSuite.cpp.obj: CXX_COMPILER__Elaborato_unscan
 #############################################
 # Link the executable Elaborato.exe
 
-build Elaborato.exe: CXX_EXECUTABLE_LINKER__Elaborato_Debug CMakeFiles/Elaborato.dir/main.cpp.obj CMakeFiles/Elaborato.dir/Transaction.cpp.obj CMakeFiles/Elaborato.dir/BankAccount.cpp.obj CMakeFiles/Elaborato.dir/TestSuite.cpp.obj
+build Elaborato.exe: CXX_EXECUTABLE_LINKER__Elaborato_Debug CMakeFiles/Elaborato.dir/main.cpp.obj CMakeFiles/Elaborato.dir/Transaction.cpp.obj CMakeFiles/Elaborato.dir/BankAccount.cpp.obj
   FLAGS = -g
-  LINK_LIBRARIES = -lCxxTest  -lkernel32  -luser32  -lgdi32  -lwinspool  -lshell32  -lole32  -loleaut32  -luuid  -lcomdlg32  -ladvapi32  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  LINK_PATH = -LC:/Libraries/cxxtest/cxxtest-master
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Elaborato.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
@@ -97,53 +89,52 @@ build Elaborato.exe: CXX_EXECUTABLE_LINKER__Elaborato_Debug CMakeFiles/Elaborato
   TARGET_PDB = Elaborato.exe.dbg
 
 # =============================================================================
-# Object build statements for EXECUTABLE target tests
+# Object build statements for EXECUTABLE target Tests
 
 
 #############################################
-# Order-only phony target for tests
+# Order-only phony target for Tests
 
-build cmake_object_order_depends_target_tests: phony || CMakeFiles/tests.dir
+build cmake_object_order_depends_target_Tests: phony || CMakeFiles/Tests.dir
 
-build CMakeFiles/tests.dir/TestSuite.cpp.obj: CXX_COMPILER__tests_unscanned_Debug C$:/Users/Home$ PC/Desktop/FRANCY/Scuola/Universita/Laboratorio$ di$ programmazione/Elaborato/TestSuite.cpp || cmake_object_order_depends_target_tests
-  DEP_FILE = CMakeFiles\tests.dir\TestSuite.cpp.obj.d
+build CMakeFiles/Tests.dir/TestSuite.cpp.obj: CXX_COMPILER__Tests_unscanned_Debug C$:/Users/Home$ PC/Desktop/FRANCY/Scuola/Universita/Laboratorio$ di$ programmazione/Elaborato/TestSuite.cpp || cmake_object_order_depends_target_Tests
+  DEP_FILE = CMakeFiles\Tests.dir\TestSuite.cpp.obj.d
   FLAGS = -g -std=gnu++1z -fdiagnostics-color=always
   INCLUDES = -IC:/Libraries/cxxtest/cxxtest-master
-  OBJECT_DIR = CMakeFiles\tests.dir
-  OBJECT_FILE_DIR = CMakeFiles\tests.dir
+  OBJECT_DIR = CMakeFiles\Tests.dir
+  OBJECT_FILE_DIR = CMakeFiles\Tests.dir
 
-build CMakeFiles/tests.dir/Transaction.cpp.obj: CXX_COMPILER__tests_unscanned_Debug C$:/Users/Home$ PC/Desktop/FRANCY/Scuola/Universita/Laboratorio$ di$ programmazione/Elaborato/Transaction.cpp || cmake_object_order_depends_target_tests
-  DEP_FILE = CMakeFiles\tests.dir\Transaction.cpp.obj.d
+build CMakeFiles/Tests.dir/Transaction.cpp.obj: CXX_COMPILER__Tests_unscanned_Debug C$:/Users/Home$ PC/Desktop/FRANCY/Scuola/Universita/Laboratorio$ di$ programmazione/Elaborato/Transaction.cpp || cmake_object_order_depends_target_Tests
+  DEP_FILE = CMakeFiles\Tests.dir\Transaction.cpp.obj.d
   FLAGS = -g -std=gnu++1z -fdiagnostics-color=always
   INCLUDES = -IC:/Libraries/cxxtest/cxxtest-master
-  OBJECT_DIR = CMakeFiles\tests.dir
-  OBJECT_FILE_DIR = CMakeFiles\tests.dir
+  OBJECT_DIR = CMakeFiles\Tests.dir
+  OBJECT_FILE_DIR = CMakeFiles\Tests.dir
 
-build CMakeFiles/tests.dir/BankAccount.cpp.obj: CXX_COMPILER__tests_unscanned_Debug C$:/Users/Home$ PC/Desktop/FRANCY/Scuola/Universita/Laboratorio$ di$ programmazione/Elaborato/BankAccount.cpp || cmake_object_order_depends_target_tests
-  DEP_FILE = CMakeFiles\tests.dir\BankAccount.cpp.obj.d
+build CMakeFiles/Tests.dir/BankAccount.cpp.obj: CXX_COMPILER__Tests_unscanned_Debug C$:/Users/Home$ PC/Desktop/FRANCY/Scuola/Universita/Laboratorio$ di$ programmazione/Elaborato/BankAccount.cpp || cmake_object_order_depends_target_Tests
+  DEP_FILE = CMakeFiles\Tests.dir\BankAccount.cpp.obj.d
   FLAGS = -g -std=gnu++1z -fdiagnostics-color=always
   INCLUDES = -IC:/Libraries/cxxtest/cxxtest-master
-  OBJECT_DIR = CMakeFiles\tests.dir
-  OBJECT_FILE_DIR = CMakeFiles\tests.dir
+  OBJECT_DIR = CMakeFiles\Tests.dir
+  OBJECT_FILE_DIR = CMakeFiles\Tests.dir
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target tests
+# Link build statements for EXECUTABLE target Tests
 
 
 #############################################
-# Link the executable tests.exe
+# Link the executable Tests.exe
 
-build tests.exe: CXX_EXECUTABLE_LINKER__tests_Debug CMakeFiles/tests.dir/TestSuite.cpp.obj CMakeFiles/tests.dir/Transaction.cpp.obj CMakeFiles/tests.dir/BankAccount.cpp.obj
+build Tests.exe: CXX_EXECUTABLE_LINKER__Tests_Debug CMakeFiles/Tests.dir/TestSuite.cpp.obj CMakeFiles/Tests.dir/Transaction.cpp.obj CMakeFiles/Tests.dir/BankAccount.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  LINK_PATH = -LC:/Libraries/cxxtest/cxxtest-master
-  OBJECT_DIR = CMakeFiles\tests.dir
+  OBJECT_DIR = CMakeFiles\Tests.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_FILE = tests.exe
-  TARGET_IMPLIB = libtests.dll.a
-  TARGET_PDB = tests.exe.dbg
+  TARGET_FILE = Tests.exe
+  TARGET_IMPLIB = libTests.dll.a
+  TARGET_PDB = Tests.exe.dbg
 
 
 #############################################
@@ -173,7 +164,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 build Elaborato: phony Elaborato.exe
 
-build tests: phony tests.exe
+build Tests: phony Tests.exe
 
 # =============================================================================
 # Folder targets.
@@ -183,7 +174,7 @@ build tests: phony tests.exe
 #############################################
 # Folder: C:/Users/Home PC/Desktop/FRANCY/Scuola/Universita/Laboratorio di programmazione/Elaborato/cmake-build-debug
 
-build all: phony Elaborato.exe tests.exe
+build all: phony Elaborato.exe Tests.exe
 
 # =============================================================================
 # Built-in targets

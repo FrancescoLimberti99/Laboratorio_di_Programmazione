@@ -1,8 +1,14 @@
 # ninja log v6
-9	711	7551474401741481	CMakeFiles/Elaborato.dir/main.cpp.obj	da8a9a117a23b24a
-4	503	7551475489581549	build.ninja	4d007c6d881abf9f
+10	920	7551843468199980	CMakeFiles/Elaborato.dir/main.cpp.obj	da8a9a117a23b24a
+4	1325	7551858138504381	CMakeFiles/tests.dir/TestSuite.cpp.obj	84285ea7f1757b6d
+4	452	7551887377919311	build.ninja	4d007c6d881abf9f
 1218	1729	7551379400830228	Elaborato.exe	bf38b9205b521fb4
-25	1157	7551418831726925	CMakeFiles/Elaborato.dir/Transaction.cpp.obj	a8f62de9b63444aa
-44	1191	7551418831919670	CMakeFiles/Elaborato.dir/BankAccount.cpp.obj	517bfb7c01521b3a
-8	871	7551445053461581	CMakeFiles/Elaborato.dir/TestSuite.cpp.obj	e4e8e36f97042bcd
+22	1197	7551858138676020	CMakeFiles/tests.dir/Transaction.cpp.obj	3c99a6ec51d7056c
+25	1106	7551843468352655	CMakeFiles/Elaborato.dir/Transaction.cpp.obj	a8f62de9b63444aa
+38	1153	7551843468487139	CMakeFiles/Elaborato.dir/BankAccount.cpp.obj	517bfb7c01521b3a
 7	1025	7551475531567049	CMakeFiles/Elaborato.dir/TestSuite.cpp.obj	e4e8e36f97042bcd
+34	1218	7551858138798370	CMakeFiles/tests.dir/BankAccount.cpp.obj	7dffef4f3ac1ce5a
+11	1442	7551886867753336	CMakeFiles/Tests.dir/Transaction.cpp.obj	b3230fa6301c51fb
+15	1449	7551886867794227	CMakeFiles/Tests.dir/BankAccount.cpp.obj	e8d6c46e30ab658a
+4	1559	7551886867692064	CMakeFiles/Tests.dir/TestSuite.cpp.obj	90ae8aca967f086c
+8	383	7551887400234887	Elaborato.exe	bf38b9205b521fb4

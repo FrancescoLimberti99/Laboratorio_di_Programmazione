@@ -52,18 +52,28 @@ build cmake_object_order_depends_target_Elaborato: phony || CMakeFiles/Elaborato
 build CMakeFiles/Elaborato.dir/main.cpp.obj: CXX_COMPILER__Elaborato_unscanned_Debug C$:/Users/Home$ PC/Desktop/FRANCY/Scuola/Universita/Laboratorio$ di$ programmazione/Elaborato/main.cpp || cmake_object_order_depends_target_Elaborato
   DEP_FILE = CMakeFiles\Elaborato.dir\main.cpp.obj.d
   FLAGS = -g -std=gnu++1z -fdiagnostics-color=always
+  INCLUDES = -IC:/Libraries/cxxtest/cxxtest-master
   OBJECT_DIR = CMakeFiles\Elaborato.dir
   OBJECT_FILE_DIR = CMakeFiles\Elaborato.dir
 
 build CMakeFiles/Elaborato.dir/Transaction.cpp.obj: CXX_COMPILER__Elaborato_unscanned_Debug C$:/Users/Home$ PC/Desktop/FRANCY/Scuola/Universita/Laboratorio$ di$ programmazione/Elaborato/Transaction.cpp || cmake_object_order_depends_target_Elaborato
   DEP_FILE = CMakeFiles\Elaborato.dir\Transaction.cpp.obj.d
   FLAGS = -g -std=gnu++1z -fdiagnostics-color=always
+  INCLUDES = -IC:/Libraries/cxxtest/cxxtest-master
   OBJECT_DIR = CMakeFiles\Elaborato.dir
   OBJECT_FILE_DIR = CMakeFiles\Elaborato.dir
 
 build CMakeFiles/Elaborato.dir/BankAccount.cpp.obj: CXX_COMPILER__Elaborato_unscanned_Debug C$:/Users/Home$ PC/Desktop/FRANCY/Scuola/Universita/Laboratorio$ di$ programmazione/Elaborato/BankAccount.cpp || cmake_object_order_depends_target_Elaborato
   DEP_FILE = CMakeFiles\Elaborato.dir\BankAccount.cpp.obj.d
   FLAGS = -g -std=gnu++1z -fdiagnostics-color=always
+  INCLUDES = -IC:/Libraries/cxxtest/cxxtest-master
+  OBJECT_DIR = CMakeFiles\Elaborato.dir
+  OBJECT_FILE_DIR = CMakeFiles\Elaborato.dir
+
+build CMakeFiles/Elaborato.dir/TestSuite.cpp.obj: CXX_COMPILER__Elaborato_unscanned_Debug C$:/Users/Home$ PC/Desktop/FRANCY/Scuola/Universita/Laboratorio$ di$ programmazione/Elaborato/TestSuite.cpp || cmake_object_order_depends_target_Elaborato
+  DEP_FILE = CMakeFiles\Elaborato.dir\TestSuite.cpp.obj.d
+  FLAGS = -g -std=gnu++1z -fdiagnostics-color=always
+  INCLUDES = -IC:/Libraries/cxxtest/cxxtest-master
   OBJECT_DIR = CMakeFiles\Elaborato.dir
   OBJECT_FILE_DIR = CMakeFiles\Elaborato.dir
 
@@ -75,15 +85,65 @@ build CMakeFiles/Elaborato.dir/BankAccount.cpp.obj: CXX_COMPILER__Elaborato_unsc
 #############################################
 # Link the executable Elaborato.exe
 
-build Elaborato.exe: CXX_EXECUTABLE_LINKER__Elaborato_Debug CMakeFiles/Elaborato.dir/main.cpp.obj CMakeFiles/Elaborato.dir/Transaction.cpp.obj CMakeFiles/Elaborato.dir/BankAccount.cpp.obj
+build Elaborato.exe: CXX_EXECUTABLE_LINKER__Elaborato_Debug CMakeFiles/Elaborato.dir/main.cpp.obj CMakeFiles/Elaborato.dir/Transaction.cpp.obj CMakeFiles/Elaborato.dir/BankAccount.cpp.obj CMakeFiles/Elaborato.dir/TestSuite.cpp.obj
   FLAGS = -g
-  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  LINK_LIBRARIES = -lCxxTest  -lkernel32  -luser32  -lgdi32  -lwinspool  -lshell32  -lole32  -loleaut32  -luuid  -lcomdlg32  -ladvapi32  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  LINK_PATH = -LC:/Libraries/cxxtest/cxxtest-master
   OBJECT_DIR = CMakeFiles\Elaborato.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
   TARGET_FILE = Elaborato.exe
   TARGET_IMPLIB = libElaborato.dll.a
   TARGET_PDB = Elaborato.exe.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target tests
+
+
+#############################################
+# Order-only phony target for tests
+
+build cmake_object_order_depends_target_tests: phony || CMakeFiles/tests.dir
+
+build CMakeFiles/tests.dir/TestSuite.cpp.obj: CXX_COMPILER__tests_unscanned_Debug C$:/Users/Home$ PC/Desktop/FRANCY/Scuola/Universita/Laboratorio$ di$ programmazione/Elaborato/TestSuite.cpp || cmake_object_order_depends_target_tests
+  DEP_FILE = CMakeFiles\tests.dir\TestSuite.cpp.obj.d
+  FLAGS = -g -std=gnu++1z -fdiagnostics-color=always
+  INCLUDES = -IC:/Libraries/cxxtest/cxxtest-master
+  OBJECT_DIR = CMakeFiles\tests.dir
+  OBJECT_FILE_DIR = CMakeFiles\tests.dir
+
+build CMakeFiles/tests.dir/Transaction.cpp.obj: CXX_COMPILER__tests_unscanned_Debug C$:/Users/Home$ PC/Desktop/FRANCY/Scuola/Universita/Laboratorio$ di$ programmazione/Elaborato/Transaction.cpp || cmake_object_order_depends_target_tests
+  DEP_FILE = CMakeFiles\tests.dir\Transaction.cpp.obj.d
+  FLAGS = -g -std=gnu++1z -fdiagnostics-color=always
+  INCLUDES = -IC:/Libraries/cxxtest/cxxtest-master
+  OBJECT_DIR = CMakeFiles\tests.dir
+  OBJECT_FILE_DIR = CMakeFiles\tests.dir
+
+build CMakeFiles/tests.dir/BankAccount.cpp.obj: CXX_COMPILER__tests_unscanned_Debug C$:/Users/Home$ PC/Desktop/FRANCY/Scuola/Universita/Laboratorio$ di$ programmazione/Elaborato/BankAccount.cpp || cmake_object_order_depends_target_tests
+  DEP_FILE = CMakeFiles\tests.dir\BankAccount.cpp.obj.d
+  FLAGS = -g -std=gnu++1z -fdiagnostics-color=always
+  INCLUDES = -IC:/Libraries/cxxtest/cxxtest-master
+  OBJECT_DIR = CMakeFiles\tests.dir
+  OBJECT_FILE_DIR = CMakeFiles\tests.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target tests
+
+
+#############################################
+# Link the executable tests.exe
+
+build tests.exe: CXX_EXECUTABLE_LINKER__tests_Debug CMakeFiles/tests.dir/TestSuite.cpp.obj CMakeFiles/tests.dir/Transaction.cpp.obj CMakeFiles/tests.dir/BankAccount.cpp.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  LINK_PATH = -LC:/Libraries/cxxtest/cxxtest-master
+  OBJECT_DIR = CMakeFiles\tests.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = tests.exe
+  TARGET_IMPLIB = libtests.dll.a
+  TARGET_PDB = tests.exe.dbg
 
 
 #############################################
@@ -113,6 +173,8 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 build Elaborato: phony Elaborato.exe
 
+build tests: phony tests.exe
+
 # =============================================================================
 # Folder targets.
 
@@ -121,7 +183,7 @@ build Elaborato: phony Elaborato.exe
 #############################################
 # Folder: C:/Users/Home PC/Desktop/FRANCY/Scuola/Universita/Laboratorio di programmazione/Elaborato/cmake-build-debug
 
-build all: phony Elaborato.exe
+build all: phony Elaborato.exe tests.exe
 
 # =============================================================================
 # Built-in targets

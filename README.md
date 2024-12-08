@@ -3,5 +3,7 @@
 
 Elaborato n.9
 
-Al momento (06/12/2024) contiene problemi che sto cercando di risolvere nella build di Tests.exe
+06/12/2024 - contiene problemi che sto cercando di risolvere nella build di Tests.exe
+
+09/12/2024 - build di Tests.exe riuscita, manca implementazione del main per svolgere i test
 

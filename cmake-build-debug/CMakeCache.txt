@@ -157,7 +157,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=Tests
+CMAKE_PROJECT_NAME:STATIC=Elaborato
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=C:/MinGW/bin/ranlib.exe
@@ -250,15 +250,6 @@ Elaborato_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 Elaborato_SOURCE_DIR:STATIC=C:/Users/Home PC/Desktop/FRANCY/Scuola/Universita/Laboratorio di programmazione/Elaborato
-
-//Value Computed by CMake
-Tests_BINARY_DIR:STATIC=C:/Users/Home PC/Desktop/FRANCY/Scuola/Universita/Laboratorio di programmazione/Elaborato/cmake-build-debug
-
-//Value Computed by CMake
-Tests_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-Tests_SOURCE_DIR:STATIC=C:/Users/Home PC/Desktop/FRANCY/Scuola/Universita/Laboratorio di programmazione/Elaborato
 
 
 ########################

@@ -47,7 +47,7 @@ int main() {
         cerr << "Errore durante il trasferimento: " << e.what() << endl;
     }
 
-    cout << "Operazioni completate con successo. Controlla i file acc1.txt e acc2.txt." << endl;
+    cout << "Operazioni completate con successo. Controlla il file Write.txt." << endl;
 
     acc2.readTransactionsFromFile("Read.txt");
 

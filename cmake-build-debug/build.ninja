@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: Tests
+# Project: Elaborato
 # Configurations: Debug
 # =============================================================================
 
@@ -40,6 +40,87 @@ include CMakeFiles/rules.ninja
 # Logical path to working directory; prefix for absolute paths.
 
 cmake_ninja_workdir = C$:/Users/Home$ PC/Desktop/FRANCY/Scuola/Universita/Laboratorio$ di$ programmazione/Elaborato/cmake-build-debug/
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target cxxtest
+
+
+#############################################
+# Order-only phony target for cxxtest
+
+build cmake_object_order_depends_target_cxxtest: phony || CMakeFiles/cxxtest.dir
+
+build CMakeFiles/cxxtest.dir/C_/Libraries/cxxtest/cxxtest-master/cxxtest/TestSuite.cpp.obj: CXX_COMPILER__cxxtest_unscanned_Debug C$:/Libraries/cxxtest/cxxtest-master/cxxtest/TestSuite.cpp || cmake_object_order_depends_target_cxxtest
+  DEP_FILE = CMakeFiles\cxxtest.dir\C_\Libraries\cxxtest\cxxtest-master\cxxtest\TestSuite.cpp.obj.d
+  FLAGS = -g -std=gnu++1z -fdiagnostics-color=always
+  INCLUDES = -IC:/Libraries/cxxtest/cxxtest-master
+  OBJECT_DIR = CMakeFiles\cxxtest.dir
+  OBJECT_FILE_DIR = CMakeFiles\cxxtest.dir\C_\Libraries\cxxtest\cxxtest-master\cxxtest
+
+build CMakeFiles/cxxtest.dir/C_/Libraries/cxxtest/cxxtest-master/cxxtest/TestTracker.cpp.obj: CXX_COMPILER__cxxtest_unscanned_Debug C$:/Libraries/cxxtest/cxxtest-master/cxxtest/TestTracker.cpp || cmake_object_order_depends_target_cxxtest
+  DEP_FILE = CMakeFiles\cxxtest.dir\C_\Libraries\cxxtest\cxxtest-master\cxxtest\TestTracker.cpp.obj.d
+  FLAGS = -g -std=gnu++1z -fdiagnostics-color=always
+  INCLUDES = -IC:/Libraries/cxxtest/cxxtest-master
+  OBJECT_DIR = CMakeFiles\cxxtest.dir
+  OBJECT_FILE_DIR = CMakeFiles\cxxtest.dir\C_\Libraries\cxxtest\cxxtest-master\cxxtest
+
+build CMakeFiles/cxxtest.dir/C_/Libraries/cxxtest/cxxtest-master/cxxtest/LinkedList.cpp.obj: CXX_COMPILER__cxxtest_unscanned_Debug C$:/Libraries/cxxtest/cxxtest-master/cxxtest/LinkedList.cpp || cmake_object_order_depends_target_cxxtest
+  DEP_FILE = CMakeFiles\cxxtest.dir\C_\Libraries\cxxtest\cxxtest-master\cxxtest\LinkedList.cpp.obj.d
+  FLAGS = -g -std=gnu++1z -fdiagnostics-color=always
+  INCLUDES = -IC:/Libraries/cxxtest/cxxtest-master
+  OBJECT_DIR = CMakeFiles\cxxtest.dir
+  OBJECT_FILE_DIR = CMakeFiles\cxxtest.dir\C_\Libraries\cxxtest\cxxtest-master\cxxtest
+
+build CMakeFiles/cxxtest.dir/C_/Libraries/cxxtest/cxxtest-master/cxxtest/Descriptions.cpp.obj: CXX_COMPILER__cxxtest_unscanned_Debug C$:/Libraries/cxxtest/cxxtest-master/cxxtest/Descriptions.cpp || cmake_object_order_depends_target_cxxtest
+  DEP_FILE = CMakeFiles\cxxtest.dir\C_\Libraries\cxxtest\cxxtest-master\cxxtest\Descriptions.cpp.obj.d
+  FLAGS = -g -std=gnu++1z -fdiagnostics-color=always
+  INCLUDES = -IC:/Libraries/cxxtest/cxxtest-master
+  OBJECT_DIR = CMakeFiles\cxxtest.dir
+  OBJECT_FILE_DIR = CMakeFiles\cxxtest.dir\C_\Libraries\cxxtest\cxxtest-master\cxxtest
+
+build CMakeFiles/cxxtest.dir/C_/Libraries/cxxtest/cxxtest-master/cxxtest/RealDescriptions.cpp.obj: CXX_COMPILER__cxxtest_unscanned_Debug C$:/Libraries/cxxtest/cxxtest-master/cxxtest/RealDescriptions.cpp || cmake_object_order_depends_target_cxxtest
+  DEP_FILE = CMakeFiles\cxxtest.dir\C_\Libraries\cxxtest\cxxtest-master\cxxtest\RealDescriptions.cpp.obj.d
+  FLAGS = -g -std=gnu++1z -fdiagnostics-color=always
+  INCLUDES = -IC:/Libraries/cxxtest/cxxtest-master
+  OBJECT_DIR = CMakeFiles\cxxtest.dir
+  OBJECT_FILE_DIR = CMakeFiles\cxxtest.dir\C_\Libraries\cxxtest\cxxtest-master\cxxtest
+
+build CMakeFiles/cxxtest.dir/C_/Libraries/cxxtest/cxxtest-master/cxxtest/ValueTraits.cpp.obj: CXX_COMPILER__cxxtest_unscanned_Debug C$:/Libraries/cxxtest/cxxtest-master/cxxtest/ValueTraits.cpp || cmake_object_order_depends_target_cxxtest
+  DEP_FILE = CMakeFiles\cxxtest.dir\C_\Libraries\cxxtest\cxxtest-master\cxxtest\ValueTraits.cpp.obj.d
+  FLAGS = -g -std=gnu++1z -fdiagnostics-color=always
+  INCLUDES = -IC:/Libraries/cxxtest/cxxtest-master
+  OBJECT_DIR = CMakeFiles\cxxtest.dir
+  OBJECT_FILE_DIR = CMakeFiles\cxxtest.dir\C_\Libraries\cxxtest\cxxtest-master\cxxtest
+
+build CMakeFiles/cxxtest.dir/C_/Libraries/cxxtest/cxxtest-master/cxxtest/DummyDescriptions.cpp.obj: CXX_COMPILER__cxxtest_unscanned_Debug C$:/Libraries/cxxtest/cxxtest-master/cxxtest/DummyDescriptions.cpp || cmake_object_order_depends_target_cxxtest
+  DEP_FILE = CMakeFiles\cxxtest.dir\C_\Libraries\cxxtest\cxxtest-master\cxxtest\DummyDescriptions.cpp.obj.d
+  FLAGS = -g -std=gnu++1z -fdiagnostics-color=always
+  INCLUDES = -IC:/Libraries/cxxtest/cxxtest-master
+  OBJECT_DIR = CMakeFiles\cxxtest.dir
+  OBJECT_FILE_DIR = CMakeFiles\cxxtest.dir\C_\Libraries\cxxtest\cxxtest-master\cxxtest
+
+build CMakeFiles/cxxtest.dir/C_/Libraries/cxxtest/cxxtest-master/cxxtest/GlobalFixture.cpp.obj: CXX_COMPILER__cxxtest_unscanned_Debug C$:/Libraries/cxxtest/cxxtest-master/cxxtest/GlobalFixture.cpp || cmake_object_order_depends_target_cxxtest
+  DEP_FILE = CMakeFiles\cxxtest.dir\C_\Libraries\cxxtest\cxxtest-master\cxxtest\GlobalFixture.cpp.obj.d
+  FLAGS = -g -std=gnu++1z -fdiagnostics-color=always
+  INCLUDES = -IC:/Libraries/cxxtest/cxxtest-master
+  OBJECT_DIR = CMakeFiles\cxxtest.dir
+  OBJECT_FILE_DIR = CMakeFiles\cxxtest.dir\C_\Libraries\cxxtest\cxxtest-master\cxxtest
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target cxxtest
+
+
+#############################################
+# Link the static library libcxxtest.a
+
+build libcxxtest.a: CXX_STATIC_LIBRARY_LINKER__cxxtest_Debug CMakeFiles/cxxtest.dir/C_/Libraries/cxxtest/cxxtest-master/cxxtest/TestSuite.cpp.obj CMakeFiles/cxxtest.dir/C_/Libraries/cxxtest/cxxtest-master/cxxtest/TestTracker.cpp.obj CMakeFiles/cxxtest.dir/C_/Libraries/cxxtest/cxxtest-master/cxxtest/LinkedList.cpp.obj CMakeFiles/cxxtest.dir/C_/Libraries/cxxtest/cxxtest-master/cxxtest/Descriptions.cpp.obj CMakeFiles/cxxtest.dir/C_/Libraries/cxxtest/cxxtest-master/cxxtest/RealDescriptions.cpp.obj CMakeFiles/cxxtest.dir/C_/Libraries/cxxtest/cxxtest-master/cxxtest/ValueTraits.cpp.obj CMakeFiles/cxxtest.dir/C_/Libraries/cxxtest/cxxtest-master/cxxtest/DummyDescriptions.cpp.obj CMakeFiles/cxxtest.dir/C_/Libraries/cxxtest/cxxtest-master/cxxtest/GlobalFixture.cpp.obj
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = CMakeFiles\cxxtest.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = libcxxtest.a
+  TARGET_PDB = cxxtest.a.dbg
+
 # =============================================================================
 # Object build statements for EXECUTABLE target Elaborato
 
@@ -95,10 +176,17 @@ build Elaborato.exe: CXX_EXECUTABLE_LINKER__Elaborato_Debug CMakeFiles/Elaborato
 #############################################
 # Order-only phony target for Tests
 
-build cmake_object_order_depends_target_Tests: phony || CMakeFiles/Tests.dir
+build cmake_object_order_depends_target_Tests: phony || cmake_object_order_depends_target_cxxtest
 
-build CMakeFiles/Tests.dir/TestSuite.cpp.obj: CXX_COMPILER__Tests_unscanned_Debug C$:/Users/Home$ PC/Desktop/FRANCY/Scuola/Universita/Laboratorio$ di$ programmazione/Elaborato/TestSuite.cpp || cmake_object_order_depends_target_Tests
-  DEP_FILE = CMakeFiles\Tests.dir\TestSuite.cpp.obj.d
+build CMakeFiles/Tests.dir/TestMain.cpp.obj: CXX_COMPILER__Tests_unscanned_Debug C$:/Users/Home$ PC/Desktop/FRANCY/Scuola/Universita/Laboratorio$ di$ programmazione/Elaborato/TestMain.cpp || cmake_object_order_depends_target_Tests
+  DEP_FILE = CMakeFiles\Tests.dir\TestMain.cpp.obj.d
+  FLAGS = -g -std=gnu++1z -fdiagnostics-color=always
+  INCLUDES = -IC:/Libraries/cxxtest/cxxtest-master
+  OBJECT_DIR = CMakeFiles\Tests.dir
+  OBJECT_FILE_DIR = CMakeFiles\Tests.dir
+
+build CMakeFiles/Tests.dir/MyTestSuite.cpp.obj: CXX_COMPILER__Tests_unscanned_Debug C$:/Users/Home$ PC/Desktop/FRANCY/Scuola/Universita/Laboratorio$ di$ programmazione/Elaborato/MyTestSuite.cpp || cmake_object_order_depends_target_Tests
+  DEP_FILE = CMakeFiles\Tests.dir\MyTestSuite.cpp.obj.d
   FLAGS = -g -std=gnu++1z -fdiagnostics-color=always
   INCLUDES = -IC:/Libraries/cxxtest/cxxtest-master
   OBJECT_DIR = CMakeFiles\Tests.dir
@@ -126,9 +214,9 @@ build CMakeFiles/Tests.dir/BankAccount.cpp.obj: CXX_COMPILER__Tests_unscanned_De
 #############################################
 # Link the executable Tests.exe
 
-build Tests.exe: CXX_EXECUTABLE_LINKER__Tests_Debug CMakeFiles/Tests.dir/TestSuite.cpp.obj CMakeFiles/Tests.dir/Transaction.cpp.obj CMakeFiles/Tests.dir/BankAccount.cpp.obj
+build Tests.exe: CXX_EXECUTABLE_LINKER__Tests_Debug CMakeFiles/Tests.dir/TestMain.cpp.obj CMakeFiles/Tests.dir/MyTestSuite.cpp.obj CMakeFiles/Tests.dir/Transaction.cpp.obj CMakeFiles/Tests.dir/BankAccount.cpp.obj | libcxxtest.a || libcxxtest.a
   FLAGS = -g
-  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  LINK_LIBRARIES = libcxxtest.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Tests.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
@@ -166,6 +254,8 @@ build Elaborato: phony Elaborato.exe
 
 build Tests: phony Tests.exe
 
+build cxxtest: phony libcxxtest.a
+
 # =============================================================================
 # Folder targets.
 
@@ -174,7 +264,7 @@ build Tests: phony Tests.exe
 #############################################
 # Folder: C:/Users/Home PC/Desktop/FRANCY/Scuola/Universita/Laboratorio di programmazione/Elaborato/cmake-build-debug
 
-build all: phony Elaborato.exe Tests.exe
+build all: phony libcxxtest.a Elaborato.exe Tests.exe
 
 # =============================================================================
 # Built-in targets

@@ -6,10 +6,11 @@
 #define ELABORATO_TESTSUITE_H
 
 #include <cxxtest/TestSuite.h>
+#include <cxxtest/LinkedList.h>
 #include "Transaction.h"
 #include "BankAccount.h"
 
-class TestSuite : public CxxTest::TestSuite {
+class MyTestSuite : public CxxTest::TestSuite {
 public:
 
     void setUp();

@@ -9,3 +9,5 @@ Elaborato n.9
 
 09/12/2024 - progetto funzionante, cartella cxx-master aggiunta al progetto
 
+09/12/2024 - aggiunta funzione clearFile in main.cpp e TestMain.cpp
+

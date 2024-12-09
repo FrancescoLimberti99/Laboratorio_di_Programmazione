@@ -7,3 +7,5 @@ Elaborato n.9
 
 09/12/2024 - build di Tests.exe riuscita, manca implementazione del TestMain per svolgere i test
 
+09/12/2024 - progetto funzionante, cartella cxx-master aggiunta al progetto
+

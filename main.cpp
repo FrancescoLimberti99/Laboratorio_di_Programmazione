@@ -1,10 +1,23 @@
 #include <iostream>
+#include <fstream>
 #include "BankAccount.h"
 #include "Transaction.h"
 
 using namespace std;
 
+void clearFile(const string& filename)  {
+    ofstream file(filename, ios::trunc);
+
+    if (!file) {
+        cerr << "Errore nell'aprire il file: " << filename << endl;
+    } else {
+        cout << "Contenuto del file '" << filename << "' cancellato con successo." << endl;
+    }
+}
+
 int main() {
+
+    clearFile("Write.txt");
 
     BankAccount acc1("IT60X0542811101000000123456", 1000.0);
 

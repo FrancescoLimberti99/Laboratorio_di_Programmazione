@@ -1,0 +1,130 @@
+Bank Account:
+-- General Info:
+IBAN: IT60X0542811101000000123456
+Balance: 1000
+-- Transactions:
+----------------------
+Transaction:
+- ID: 12345
+- Amount: 300
+- Type: Incoming
+- Timestamp: 09-12-2024 23:51:59
+----------------------
+Transaction:
+- ID: 56789
+- Amount: 100
+- Type: Outcoming
+- Timestamp: 09-12-2024 23:51:59
+----------------------
+Bank Account:
+-- General Info:
+IBAN: IT60X0542811101000000123456
+Balance: 1200
+-- Transactions:
+Transaction:
+- ID: 12345
+- Amount: 300
+- Type: Incoming
+- Timestamp: 09-12-2024 23:51:59
+Transaction:
+- ID: 56789
+- Amount: 100
+- Type: Outcoming
+- Timestamp: 09-12-2024 23:51:59
+----------------------
+Bank Account:
+-- General Info:
+IBAN: IT60X0542811101000000654321
+Balance: 500
+-- Transactions:
+----------------------
+Bank Account:
+-- General Info:
+IBAN: IT60X0542811101000000123456
+Balance: 1000
+-- Transactions:
+Transaction:
+- ID: 12345
+- Amount: 300
+- Type: Incoming
+- Timestamp: 09-12-2024 23:51:59
+Transaction:
+- ID: 56789
+- Amount: 100
+- Type: Outcoming
+- Timestamp: 09-12-2024 23:51:59
+Transaction:
+- ID: 10041
+- Amount: 200
+- Type: Outcoming
+- Timestamp: 09-12-2024 23:51:59
+----------------------
+Bank Account:
+-- General Info:
+IBAN: IT60X0542811101000000654321
+Balance: 700
+-- Transactions:
+Transaction:
+- ID: 10041
+- Amount: 200
+- Type: Incoming
+- Timestamp: 09-12-2024 23:51:59
+----------------------
+Bank Account:
+-- General Info:
+IBAN: IT60X0542811101000000123456
+Balance: 1100
+-- Transactions:
+Transaction:
+- ID: 12345
+- Amount: 300
+- Type: Incoming
+- Timestamp: 09-12-2024 23:51:59
+Transaction:
+- ID: 56789
+- Amount: 100
+- Type: Outcoming
+- Timestamp: 09-12-2024 23:51:59
+Transaction:
+- ID: 10041
+- Amount: 200
+- Type: Outcoming
+- Timestamp: 09-12-2024 23:51:59
+Transaction:
+- ID: 28467
+- Amount: 100
+- Type: Incoming
+- Timestamp: 09-12-2024 23:51:59
+----------------------
+Bank Account:
+-- General Info:
+IBAN: IT60X0542811101000000654321
+Balance: 600
+-- Transactions:
+Transaction:
+- ID: 10041
+- Amount: 200
+- Type: Incoming
+- Timestamp: 09-12-2024 23:51:59
+Transaction:
+- ID: 28467
+- Amount: 100
+- Type: Outcoming
+- Timestamp: 09-12-2024 23:51:59
+----------------------
+Bank Account:
+-- General Info:
+IBAN: IT60X0542811101000000321654
+Balance: 1200
+-- Transactions:
+Transaction:
+- ID: 54321
+- Amount: 800
+- Type: Incoming
+- Timestamp:  23-11-2024 11:44:23
+Transaction:
+- ID: 98765
+- Amount: 800
+- Type: Outcoming
+- Timestamp:  28-11-2024 16:17:45
+----------------------

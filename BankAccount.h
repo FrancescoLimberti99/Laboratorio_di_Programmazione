@@ -1,7 +1,3 @@
-//
-// Created by Home PC on 03/12/2024.
-//
-
 #ifndef ELABORATO_BANKACCOUNT_H
 #define ELABORATO_BANKACCOUNT_H
 

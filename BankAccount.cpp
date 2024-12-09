@@ -1,7 +1,3 @@
-//
-// Created by Home PC on 03/12/2024.
-//
-
 #include "BankAccount.h"
 #include <fstream>
 #include <sstream>

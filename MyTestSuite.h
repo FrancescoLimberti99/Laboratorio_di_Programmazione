@@ -1,7 +1,3 @@
-//
-// Created by Home PC on 06/12/2024.
-//
-
 #ifndef ELABORATO_TESTSUITE_H
 #define ELABORATO_TESTSUITE_H
 
@@ -35,8 +31,10 @@ public:
 
     void testBankAccountReadTransactionsFromFile();
 
+    void runAllTests();
+
 private:
-    Transaction* t1;
+    Transaction* transaction;
     BankAccount* sender;
     BankAccount* receiver;
 };

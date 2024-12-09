@@ -49,9 +49,12 @@ int main() {
 
     cout << "Operazioni completate con successo. Controlla il file Write.txt." << endl;
 
-    acc2.readTransactionsFromFile("Read.txt");
+    BankAccount acc3("IT60X0542811101000000321654", 1200.0);
 
-    acc2.writeToFile("Write.txt");
+    acc3.readTransactionsFromFile("Read.txt");
+
+    acc3.writeToFile("Write.txt");
+
 
     return 0;
 }

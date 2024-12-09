@@ -1,11 +1,9 @@
 {
+	"archive" : {},
 	"artifacts" : 
 	[
 		{
-			"path" : "Tests.exe"
-		},
-		{
-			"path" : "Tests.pdb"
+			"path" : "libcxxtest.a"
 		}
 	],
 	"backtrace" : 1,
@@ -13,8 +11,7 @@
 	{
 		"commands" : 
 		[
-			"add_executable",
-			"target_link_libraries",
+			"add_library",
 			"include_directories"
 		],
 		"files" : 
@@ -29,17 +26,11 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 22,
+				"line" : 9,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
-				"file" : 0,
-				"line" : 24,
-				"parent" : 0
-			},
-			{
-				"command" : 2,
 				"file" : 0,
 				"line" : 7,
 				"parent" : 0
@@ -58,8 +49,8 @@
 			"includes" : 
 			[
 				{
-					"backtrace" : 3,
-					"path" : "C:/Libraries/cxxtest/cxxtest-master"
+					"backtrace" : 2,
+					"path" : "C:/Users/Home PC/Desktop/FRANCY/Scuola/Universita/Laboratorio di programmazione/Elaborato/./cxxtest-master"
 				}
 			],
 			"language" : "CXX",
@@ -76,44 +67,17 @@
 				0,
 				1,
 				2,
-				3
+				3,
+				4,
+				5,
+				6,
+				7
 			]
 		}
 	],
-	"dependencies" : 
-	[
-		{
-			"backtrace" : 2,
-			"id" : "cxxtest::@6890427a1f51a3e7e1df"
-		}
-	],
-	"id" : "Tests::@6890427a1f51a3e7e1df",
-	"link" : 
-	{
-		"commandFragments" : 
-		[
-			{
-				"fragment" : "-g",
-				"role" : "flags"
-			},
-			{
-				"fragment" : "",
-				"role" : "flags"
-			},
-			{
-				"backtrace" : 2,
-				"fragment" : "libcxxtest.a",
-				"role" : "libraries"
-			},
-			{
-				"fragment" : "-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32",
-				"role" : "libraries"
-			}
-		],
-		"language" : "CXX"
-	},
-	"name" : "Tests",
-	"nameOnDisk" : "Tests.exe",
+	"id" : "cxxtest::@6890427a1f51a3e7e1df",
+	"name" : "cxxtest",
+	"nameOnDisk" : "libcxxtest.a",
 	"paths" : 
 	{
 		"build" : ".",
@@ -128,7 +92,11 @@
 				0,
 				1,
 				2,
-				3
+				3,
+				4,
+				5,
+				6,
+				7
 			]
 		}
 	],
@@ -137,27 +105,51 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "TestMain.cpp",
+			"path" : "cxxtest-master/cxxtest/TestSuite.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "MyTestSuite.cpp",
+			"path" : "cxxtest-master/cxxtest/TestTracker.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "Transaction.cpp",
+			"path" : "cxxtest-master/cxxtest/LinkedList.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "BankAccount.cpp",
+			"path" : "cxxtest-master/cxxtest/Descriptions.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "cxxtest-master/cxxtest/RealDescriptions.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "cxxtest-master/cxxtest/ValueTraits.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "cxxtest-master/cxxtest/DummyDescriptions.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "cxxtest-master/cxxtest/GlobalFixture.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],
-	"type" : "EXECUTABLE"
+	"type" : "STATIC_LIBRARY"
 }

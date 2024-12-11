@@ -77,6 +77,9 @@ void MyTestSuite::runAllTests() {
     testBankAccountWriteToFile();
     testBankAccountReadTransactionsFromFile();
 
+    tearDown();
+
 }
+
 
 

@@ -9,21 +9,21 @@ using namespace std;
 
 class BankAccount {
 public:
-    BankAccount(const string& iban, double balance);
+    BankAccount(const string& iban, double balance); // costruttore
 
-    string getIban() const;
+    string getIban() const; // getter per l'attributo iban
 
-    double getBalance() const;
+    double getBalance() const; // getter per l'attributo balance
 
-    vector<Transaction> getTransactions() const;
+    vector<Transaction> getTransactions() const; // getter per l'attributo transactions
 
-    void writeToFile(const string& filename) const;
+    void writeToFile(const string& filename) const; // scrive su file
 
-    void addTransaction(const Transaction& transaction);
+    void addTransaction(const Transaction& transaction); // aggiunge una transaction all'attributo transactions
 
-    void sendMoney(double amount, BankAccount& receiver);
+    void sendMoney(double amount, BankAccount& receiver); // invia denaro ad un altro BankAccount (istanzia due transazioni con lo stesso id)
 
-    void readTransactionsFromFile(const string& filename);
+    void readTransactionsFromFile(const string& filename); // legge da file una transaction e inserisce nell'attributo transactions
 
 private:
     string iban;

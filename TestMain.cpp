@@ -16,13 +16,13 @@ void clearFile(const string& filename)  {
 
 int main() {
 
-    clearFile("test_transaction_write.txt");
+    clearFile("test_transaction_write.txt"); // pulisce il file
 
-    clearFile("test_bankaccount_write.txt");
+    clearFile("test_bankaccount_write.txt"); // pulisce il file
 
-    MyTestSuite suite;
+    MyTestSuite suite; // istanzia una suite per i test
 
-    suite.runAllTests();
+    suite.runAllTests(); // esegue il metodo runAllTests() che svolge tutti i test
 
     return 0;
 }

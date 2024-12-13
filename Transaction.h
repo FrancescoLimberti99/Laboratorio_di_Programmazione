@@ -8,19 +8,19 @@ using namespace std;
 class Transaction {
 public:
 
-    Transaction(int id, double amount, bool type);
+    Transaction(int id, double amount, bool type); // costruttore
 
-    int getId() const;
+    int getId() const; // getter per attributo id
 
-    double getAmount() const;
+    double getAmount() const; // getter per attributo amount
 
-    bool getType() const;
+    bool getType() const; // getter per attributo type
 
-    string getTimestamp() const;
+    string getTimestamp() const; // getter per attributo timestamp
 
-    void setTimestamp(const string& timestamp);
+    void setTimestamp(const string& timestamp); // setter per attributo timestamp
 
-    void writeToFile(const string& filename) const;
+    void writeToFile(const string& filename) const; // scrive sul file
 
 private:
     int id;

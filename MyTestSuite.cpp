@@ -65,12 +65,12 @@ void MyTestSuite::testBankAccountReadTransactionsFromFile() {
 void MyTestSuite::runAllTests() {
     setUp();
 
-    //Transaction methods tests
+    //Transaction tests
     testTransactionConstructor();
     testTransactionTimestamp();
     testTransactionWriteToFile();
 
-    //BankAccount methods tests
+    //BankAccount tests
     testBankAccountConstructor();
     testBankAccountAddTransaction();
     testBankAccountSendMoney();

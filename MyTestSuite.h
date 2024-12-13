@@ -13,14 +13,14 @@ public:
 
     void tearDown();
 
-    // Tests per la classe Transaction
+    // Tests per i metodi della classe Transaction
     void testTransactionConstructor();
 
     void testTransactionTimestamp();
 
     void testTransactionWriteToFile();
 
-    // Tests per la classe BankAccount
+    // Tests per i metodi della classe BankAccount
     void testBankAccountConstructor();
 
     void testBankAccountAddTransaction();

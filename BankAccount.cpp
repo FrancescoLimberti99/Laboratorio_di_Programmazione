@@ -23,7 +23,7 @@ vector<Transaction> BankAccount::getTransactions() const {
 }
 
 void BankAccount::writeToFile(const string& filename) const {
-    ofstream file(filename, ios::app);
+    ofstream file(filename, ios::app); // classe ofstream per scrivere su file, ios::app significa che è in modalità append (aggiunge)
     if (file.is_open()) {
         file << "Bank Account:" << "\n";
         file << "-- General Info:" << "\n";
@@ -75,7 +75,7 @@ void BankAccount::sendMoney(double amount, BankAccount& receiver) {
 }
 
 void BankAccount::readTransactionsFromFile(const string& filename) {
-    ifstream file(filename);
+    ifstream file(filename); // ifstream classe per aprire il file in sola lettura
     if (!file.is_open()) {
         cerr << "Errore: impossibile aprire il file " << filename << endl;
         return;
@@ -87,32 +87,33 @@ void BankAccount::readTransactionsFromFile(const string& filename) {
     bool type;
     string timestamp;
 
-    while (getline(file, line)) {
-        if (line.find("Transaction:") != string::npos) {
+    while (getline(file, line)) {     // getline legge il file riga per riga
+        if (line.find("Transaction:") != string::npos) {   // se trova Transaction: nella riga
 
-            getline(file, line);
+            getline(file, line); // riga successiva
             stringstream ss(line);
             string temp;
-            ss >> temp >> temp >> transactionId;
+            ss >> temp >> temp >> transactionId; // estrae id della transaction
 
-            getline(file, line);
+            getline(file, line); // riga successiva
             ss.clear();
             ss.str(line);
-            ss >> temp >> temp >> amount;
+            ss >> temp >> temp >> amount; // estrae amount della transaction
 
-            getline(file, line);
+            getline(file, line); // riga successiva
             ss.clear();
             ss.str(line);
             string typeStr;
-            ss >> temp >> temp >> typeStr;
+            ss >> temp >> temp >> typeStr; // estrae il il type della transaction
             type = (typeStr == "Incoming");
 
-            getline(file, line);
+            getline(file, line); // riga successiva
             ss.clear();
             ss.str(line);
             ss >> temp >> temp;
-            getline(ss, timestamp);
+            getline(ss, timestamp); // estrae timestamp della transaction
 
+            // controlla duplicato
             bool isDuplicate = false;
             for (const auto& transaction : transactions) {
                 if (transaction.getId() == transactionId) {
@@ -121,6 +122,7 @@ void BankAccount::readTransactionsFromFile(const string& filename) {
                 }
             }
 
+            // se non è già presente istanzia una transazione con i dati estratti
             if (!isDuplicate) {
                 Transaction newTransaction(transactionId, amount, type);
                 newTransaction.setTimestamp(timestamp);

@@ -11,7 +11,7 @@ Transaction::Transaction(int id, double amount, bool type) : id(id), amount(amou
     time_t now_time = chrono::system_clock::to_time_t(now);
 
     stringstream ss;
-    ss << put_time(localtime(&now_time), "%d-%m-%Y %H:%M:%S");
+    ss << put_time(localtime(&now_time), "%d-%m-%Y %H:%M:%S"); // cattura l'istante di tempo
     timestamp = ss.str();
 }
 

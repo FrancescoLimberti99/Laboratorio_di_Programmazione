@@ -23,7 +23,7 @@ public:
 
     void sendMoney(double amount, BankAccount& receiver); // invia denaro ad un altro BankAccount (istanzia due transazioni con lo stesso id)
 
-    void readTransactionsFromFile(const string& filename); // legge da file una transaction e inserisce nell'attributo transactions
+    void readTransactionsFromFile(const string& filename); // legge da file una transaction, la costruisce e la inserisce nell'attributo transactions
 
 private:
     string iban;

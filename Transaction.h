@@ -20,7 +20,7 @@ public:
 
     void setTimestamp(const string& timestamp); // setter per attributo timestamp
 
-    void writeToFile(const string& filename) const; // scrive sul file
+    void writeToFile(const string& filename) const; // scrive la transazione sul file
 
 private:
     int id;

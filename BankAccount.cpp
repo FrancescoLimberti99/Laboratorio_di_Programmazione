@@ -75,7 +75,7 @@ void BankAccount::sendMoney(double amount, BankAccount& receiver) {
 }
 
 void BankAccount::readTransactionsFromFile(const string& filename) {
-    ifstream file(filename); // ifstream classe per aprire il file in sola lettura
+    ifstream file(filename); // ifstream classe per aprire il file per la sola lettura
     if (!file.is_open()) {
         cerr << "Errore: impossibile aprire il file " << filename << endl;
         return;

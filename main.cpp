@@ -6,7 +6,7 @@
 using namespace std;
 
 void clearFile(const string& filename)  {
-    ofstream file(filename, ios::trunc);
+    ofstream file(filename, ios::trunc); // classe ofstream per modificare il file, ios::trunc significa che elimina qualcosa
 
     if (!file) {
         cerr << "Errore nell'aprire il file: " << filename << endl;

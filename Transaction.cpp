@@ -36,7 +36,7 @@ void Transaction::setTimestamp(const string& timestamp) {
 }
 
 void Transaction::writeToFile(const string& filename) const {
-    ofstream file(filename, ios::app); // classe ofstream per scrivere su file, ios::app significa che è in modalità append (aggiunge)
+    ofstream file(filename, ios::app); // classe ofstream per scrivere su file, ios::app significa che è in modalità append (aggiunge in coda)
     if (file.is_open()) {
         file << "Transaction:" << "\n";
         file << "- ID: " << id << "\n";

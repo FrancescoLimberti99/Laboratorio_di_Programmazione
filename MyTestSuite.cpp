@@ -33,22 +33,22 @@ void MyTestSuite::testTransactionWriteToFile() {
 void MyTestSuite::testBankAccountConstructor() {
     TS_ASSERT_EQUALS(sender->getIban(), "IT60X0542811101000000123456");
     TS_ASSERT_DELTA(sender->getBalance(), 1000.0, 0.01);
-    TS_ASSERT_EQUALS(sender->getTransactions().size(), 0);
+    TS_ASSERT_EQUALS(sender->getTransactions().size(), 0); //TODO getSize()
 }
 
 
 void MyTestSuite::testBankAccountAddTransaction() {
     sender->addTransaction(*transaction);
     TS_ASSERT_DELTA(sender->getBalance(), 1300.0, 0.01);
-    TS_ASSERT_EQUALS(sender->getTransactions().size(), 1);
+    TS_ASSERT_EQUALS(sender->getTransactions().size(), 1); //TODO getSize()
 }
 
-void MyTestSuite::testBankAccountSendMoney() {
+void MyTestSuite::testBankAccountSendMoney() { //TODO ASSERT/throw for exceptions
     sender->sendMoney(200.0, *receiver);
     TS_ASSERT_DELTA(sender->getBalance(), 800.0, 0.01);
     TS_ASSERT_DELTA(receiver->getBalance(), 700.0, 0.01);
-    TS_ASSERT_EQUALS(sender->getTransactions().size(), 1);
-    TS_ASSERT_EQUALS(receiver->getTransactions().size(), 1);
+    TS_ASSERT_EQUALS(sender->getTransactions().size(), 1); //TODO getSize()
+    TS_ASSERT_EQUALS(receiver->getTransactions().size(), 1); //TODO getSize()
 }
 
 
@@ -59,7 +59,7 @@ void MyTestSuite::testBankAccountWriteToFile() {
 
 void MyTestSuite::testBankAccountReadTransactionsFromFile() {
     sender->readTransactionsFromFile("test_bankaccount_read.txt");
-    TS_ASSERT(sender->getTransactions().size() > 0); // Supponendo che il file contenga transazioni.
+    TS_ASSERT(sender->getTransactions().size() > 0); // Supponendo che il file contenga transazioni. //TODO getSize()
 }
 
 void MyTestSuite::runAllTests() {

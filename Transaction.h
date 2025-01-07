@@ -20,13 +20,18 @@ public:
 
     void setTimestamp(const string& timestamp); // setter per attributo timestamp
 
-    void writeToFile(const string& filename) const; // scrive la transazione sul file
+    void writeToFile(const string& filename) const; // scrive la transazione sul file //TODO think toString() and usage
+
+    //TODO modify transaction
+
+    //TODO delete transaction
 
 private:
     int id;
     double amount;
     bool type; // 0 = uscita, 1 = entrata
     string timestamp;
+    //TODO add causale
 
 };
 

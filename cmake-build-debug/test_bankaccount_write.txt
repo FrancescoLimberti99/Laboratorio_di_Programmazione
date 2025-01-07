@@ -1,0 +1,16 @@
+Bank Account:
+-- General Info:
+IBAN: IT60X0542811101000000123456
+Balance: 1100
+-- Transactions:
+Transaction:
+- ID: 12345
+- Amount: 300
+- Type: Incoming
+- Timestamp: 01-01-2024 12:00:00
+Transaction:
+- ID: 10041
+- Amount: 200
+- Type: Outcoming
+- Timestamp: 07-01-2025 14:53:41
+----------------------

@@ -15,9 +15,11 @@ public:
 
     double getBalance() const; // getter per l'attributo balance
 
-    vector<Transaction> getTransactions() const; // getter per l'attributo transactions
+    vector<Transaction> getTransactions() const; // getter per l'attributo transactions //TODO get the single transaction
 
     void writeToFile(const string& filename) const; // scrive su file
+
+    //TODO write the single transaction
 
     void addTransaction(const Transaction& transaction); // aggiunge una transaction all'attributo transactions
 
@@ -25,10 +27,15 @@ public:
 
     void readTransactionsFromFile(const string& filename); // legge da file una transaction, la costruisce e la inserisce nell'attributo transactions
 
+    //TODO search transaction (data/tipo)
+
+    //TODO getsize(transactions)
+
 private:
     string iban;
     double balance;
     vector<Transaction> transactions;
+    //TODO add name
 
 };
 

@@ -7,6 +7,8 @@
 
 Transaction::Transaction(int id, double amount, bool type) : id(id), amount(amount), type(type) {
 
+    //TODO check positive amount (throw exception)
+
     auto now = chrono::system_clock::now();
     time_t now_time = chrono::system_clock::to_time_t(now);
 
@@ -32,6 +34,7 @@ string Transaction::getTimestamp() const {
 }
 
 void Transaction::setTimestamp(const string& timestamp) {
+    //TODO check timestamp validity
     this->timestamp = timestamp;
 }
 

@@ -31,6 +31,8 @@ public:
 
     void testBankAccountReadTransactionsFromFile();
 
+    //TODO add functions for new methods
+
     void runAllTests();
 
 private:

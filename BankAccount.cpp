@@ -22,7 +22,7 @@ vector<Transaction> BankAccount::getTransactions() const {
     return transactions;
 }
 
-void BankAccount::writeToFile(const string& filename) const {
+void BankAccount::writeToFile(const string& filename) const { //TODO semplify
     ofstream file(filename, ios::app); // classe ofstream per scrivere su file, ios::app significa che è in modalità append (aggiunge)
     if (file.is_open()) {
         file << "Bank Account:" << "\n";
@@ -31,7 +31,7 @@ void BankAccount::writeToFile(const string& filename) const {
         file << "Balance: " << balance << "\n";
         file << "-- Transactions:" << "\n";
 
-        for (const auto& transaction : transactions) {
+        for (const auto& transaction : transactions) { //TODO use method
             file << "Transaction:" << "\n";
             file << "- ID: " << transaction.getId() << "\n";
             file << "- Amount: " << transaction.getAmount() << "\n";
@@ -74,7 +74,7 @@ void BankAccount::sendMoney(double amount, BankAccount& receiver) {
     receiver.addTransaction(receiverTransaction);
 }
 
-void BankAccount::readTransactionsFromFile(const string& filename) {
+void BankAccount::readTransactionsFromFile(const string& filename) { //TODO simplify
     ifstream file(filename); // ifstream classe per aprire il file per la sola lettura
     if (!file.is_open()) {
         cerr << "Errore: impossibile aprire il file " << filename << endl;

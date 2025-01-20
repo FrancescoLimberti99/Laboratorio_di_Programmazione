@@ -7,8 +7,8 @@
 
 using namespace std;
 
-BankAccount::BankAccount(const string& iban, double balance)
-        : iban(iban), balance(balance) {}
+BankAccount::BankAccount(const string& name, const string& iban, double balance)
+        : name(name), iban(iban), balance(balance) {}
 
 string BankAccount::getIban() const {
     return iban;
@@ -22,7 +22,7 @@ vector<Transaction> BankAccount::getTransactions() const {
     return transactions;
 }
 
-void BankAccount::writeToFile(const string& filename) const { //TODO semplify
+void BankAccount::writeToFile(const string& filename) const {
     ofstream file(filename, ios::app); // classe ofstream per scrivere su file, ios::app significa che è in modalità append (aggiunge)
     if (file.is_open()) {
         file << "Bank Account:" << "\n";
@@ -31,14 +31,11 @@ void BankAccount::writeToFile(const string& filename) const { //TODO semplify
         file << "Balance: " << balance << "\n";
         file << "-- Transactions:" << "\n";
 
-        for (const auto& transaction : transactions) { //TODO use method
-            file << "Transaction:" << "\n";
-            file << "- ID: " << transaction.getId() << "\n";
-            file << "- Amount: " << transaction.getAmount() << "\n";
-            file << "- Type: " << (transaction.getType() ? "Incoming" : "Outcoming") << "\n";
-            file << "- Timestamp: " << transaction.getTimestamp() << "\n";
+        for (const auto& transaction : transactions) {
+            transaction.writeToFile(filename);
         }
 
+        file << "----------------------" << "\n";
         file << "----------------------" << "\n";
         file.close();
     } else {
@@ -56,7 +53,7 @@ void BankAccount::addTransaction(const Transaction& transaction) {
     }
 }
 
-void BankAccount::sendMoney(double amount, BankAccount& receiver) {
+void BankAccount::sendMoney(double amount, BankAccount& receiver, const string& motivation) {
     if (amount <= 0) {
         throw invalid_argument("L'importo deve essere positivo.");
     }
@@ -67,14 +64,14 @@ void BankAccount::sendMoney(double amount, BankAccount& receiver) {
 
     int transactionId = rand() % 90000 + 10000;
 
-    Transaction senderTransaction(transactionId, amount, false); // false = uscita
-    Transaction receiverTransaction(transactionId, amount, true); // true = entrata
+    Transaction senderTransaction(transactionId, amount, false, motivation); // false = uscita
+    Transaction receiverTransaction(transactionId, amount, true, motivation); // true = entrata
 
     addTransaction(senderTransaction);
     receiver.addTransaction(receiverTransaction);
 }
 
-void BankAccount::readTransactionsFromFile(const string& filename) { //TODO simplify
+void BankAccount::readTransactionsFromFile(const string& filename) {
     ifstream file(filename); // ifstream classe per aprire il file per la sola lettura
     if (!file.is_open()) {
         cerr << "Errore: impossibile aprire il file " << filename << endl;
@@ -86,6 +83,7 @@ void BankAccount::readTransactionsFromFile(const string& filename) { //TODO simp
     double amount;
     bool type;
     string timestamp;
+    string motivation;
 
     while (getline(file, line)) {     // getline legge il file riga per riga
         if (line.find("Transaction:") != string::npos) {   // se trova Transaction: nella riga
@@ -113,6 +111,12 @@ void BankAccount::readTransactionsFromFile(const string& filename) { //TODO simp
             ss >> temp >> temp;
             getline(ss, timestamp); // estrae timestamp della transaction
 
+            getline(file, line); // riga successiva
+            ss.clear();
+            ss.str(line);
+            ss >> temp >> temp;
+            getline(ss, motivation); // estrae motivation della transaction
+
             // controlla duplicato
             bool isDuplicate = false;
             for (const auto& transaction : transactions) {
@@ -124,7 +128,7 @@ void BankAccount::readTransactionsFromFile(const string& filename) { //TODO simp
 
             // se non è già presente istanzia una transazione con i dati estratti
             if (!isDuplicate) {
-                Transaction newTransaction(transactionId, amount, type);
+                Transaction newTransaction(transactionId, amount, type, motivation);
                 newTransaction.setTimestamp(timestamp);
                 addTransaction(newTransaction);
             }
@@ -132,5 +136,9 @@ void BankAccount::readTransactionsFromFile(const string& filename) { //TODO simp
     }
 
     file.close();
+}
+
+int BankAccount::getSizeOfTransactions() {
+    return transactions.size();
 }
 

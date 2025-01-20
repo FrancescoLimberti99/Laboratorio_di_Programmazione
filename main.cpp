@@ -19,12 +19,12 @@ int main() {
 
     clearFile("Write.txt"); // pulisco il file dove scriverò
 
-    BankAccount acc1("IT60X0542811101000000123456", 1000.0); // istanzio il  BankAccount acc1
+    BankAccount acc1("Arthur Morgan", "IT60X0542811101000000123456", 1000.0); // istanzio il  BankAccount acc1
 
     acc1.writeToFile("Write.txt"); // scrivo su file
 
-    Transaction t1(12345, 300.0, true); // istanzio due Transaction t1 e t2
-    Transaction t2(56789, 100.0, false);
+    Transaction t1(12345, 300.0, true, "rimborso"); // istanzio due Transaction t1 e t2
+    Transaction t2(56789, 100.0, false, "multa");
 
     t1.writeToFile("Write.txt"); // scrivo su file
     t2.writeToFile("Write.txt");
@@ -34,12 +34,12 @@ int main() {
 
     acc1.writeToFile("Write.txt"); // scrivo su file
 
-    BankAccount acc2("IT60X0542811101000000654321", 500.0); // istanzio il BankAccount acc2
+    BankAccount acc2("John Marston","IT60X0542811101000000654321", 500.0); // istanzio il BankAccount acc2
 
     acc2.writeToFile("Write.txt"); // scrivo su file
 
     try {
-        acc1.sendMoney(200.0, acc2); // acc1 invia denaro a acc2
+        acc1.sendMoney(200.0, acc2, "acquisto"); // acc1 invia denaro a acc2
 
         acc1.writeToFile("Write.txt"); // scrivo su file
         acc2.writeToFile("Write.txt");
@@ -50,7 +50,7 @@ int main() {
     }
 
     try {
-        acc2.sendMoney(100.0, acc1); // ac2 invia denaro a acc2
+        acc2.sendMoney(100.0, acc1, "resto"); // ac2 invia denaro a acc2
 
         acc1.writeToFile("Write.txt"); // scrivo su file
         acc2.writeToFile("Write.txt");
@@ -62,7 +62,7 @@ int main() {
 
     cout << "Operazioni completate con successo. Controlla il file Write.txt." << endl;
 
-    BankAccount acc3("IT60X0542811101000000321654", 1200.0); // istanzio il BankAccount acc3
+    BankAccount acc3("Dutch Van der Linde", "IT60X0542811101000000321654", 1200.0); // istanzio il BankAccount acc3
 
     acc3.readTransactionsFromFile("Read.txt"); // leggo da file e inserisco nelle Transaction del BankAccount
 

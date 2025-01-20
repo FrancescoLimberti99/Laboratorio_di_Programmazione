@@ -8,7 +8,7 @@ using namespace std;
 class Transaction {
 public:
 
-    Transaction(int id, double amount, bool type); // costruttore
+    Transaction(int id, double amount, bool type, const string& motivation); // costruttore
 
     int getId() const; // getter per attributo id
 
@@ -18,20 +18,26 @@ public:
 
     string getTimestamp() const; // getter per attributo timestamp
 
+    string getMotivation() const; // getter per attributo motivation
+
+    void setAmount(double amount); // setter per attributo amount
+
     void setTimestamp(const string& timestamp); // setter per attributo timestamp
+
+    void setMotivation(const string &motivation); // setter per attributo motivation
 
     void writeToFile(const string& filename) const; // scrive la transazione sul file //TODO think toString() and usage
 
-    //TODO modify transaction
+    void modifyTransaction(double amount, const string& timestamp, const string& motivation ); // modifica la transazione
 
-    //TODO delete transaction
+    virtual ~Transaction();
 
 private:
     int id;
     double amount;
     bool type; // 0 = uscita, 1 = entrata
     string timestamp;
-    //TODO add causale
+    string motivation; // causale
 
 };
 

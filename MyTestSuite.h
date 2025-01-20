@@ -20,6 +20,8 @@ public:
 
     void testTransactionWriteToFile();
 
+    void testTransactionModifyTransaction();
+
     // Tests per i metodi della classe BankAccount
     void testBankAccountConstructor();
 
@@ -30,6 +32,8 @@ public:
     void testBankAccountWriteToFile();
 
     void testBankAccountReadTransactionsFromFile();
+
+    void testBankAccountGetSizeOfTransaction();
 
     //TODO add functions for new methods
 

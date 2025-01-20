@@ -9,7 +9,7 @@ using namespace std;
 
 class BankAccount {
 public:
-    BankAccount(const string& iban, double balance); // costruttore
+    BankAccount(const string& name, const string& iban, double balance); // costruttore
 
     string getIban() const; // getter per l'attributo iban
 
@@ -23,19 +23,19 @@ public:
 
     void addTransaction(const Transaction& transaction); // aggiunge una transaction all'attributo transactions
 
-    void sendMoney(double amount, BankAccount& receiver); // invia denaro ad un altro BankAccount (istanzia due transazioni con lo stesso id)
+    void sendMoney(double amount, BankAccount& receiver, const string& motivation); // invia denaro ad un altro BankAccount (istanzia due transazioni con lo stesso id)
 
     void readTransactionsFromFile(const string& filename); // legge da file una transaction, la costruisce e la inserisce nell'attributo transactions
 
     //TODO search transaction (data/tipo)
 
-    //TODO getsize(transactions)
+    int getSizeOfTransactions();
 
 private:
+    string name;
     string iban;
     double balance;
     vector<Transaction> transactions;
-    //TODO add name
 
 };
 

@@ -15,11 +15,13 @@ public:
 
     double getBalance() const; // getter per l'attributo balance
 
-    vector<Transaction> getTransactions() const; // getter per l'attributo transactions //TODO get the single transaction
+    vector<Transaction> getTransactions() const; // getter per l'attributo transactions
+
+    Transaction getTransaction(int a); // getter per la singola transaction
 
     void writeToFile(const string& filename) const; // scrive su file
 
-    //TODO write the single transaction
+    void writeTransactionToFile(int a, const string& filename);
 
     void addTransaction(const Transaction& transaction); // aggiunge una transaction all'attributo transactions
 
@@ -27,9 +29,11 @@ public:
 
     void readTransactionsFromFile(const string& filename); // legge da file una transaction, la costruisce e la inserisce nell'attributo transactions
 
-    //TODO search transaction (data/tipo)
-
     int getSizeOfTransactions();
+
+    void searchTransactionByType(bool type, const string& filename); // scrive su file tutte le transaction del tipo richiesto
+
+    void searchTransactionByTimestamp(const string& timestamp, const string& filename); // scrive su file tutte le transaction antecedenti al timestamp passato come argomento
 
 private:
     string name;

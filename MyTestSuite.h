@@ -9,9 +9,9 @@
 class MyTestSuite : public CxxTest::TestSuite {
 public:
 
-    void setUp();
+    void setUp() override;
 
-    void tearDown();
+    void tearDown() override;
 
     // Tests per i metodi della classe Transaction
     void testTransactionConstructor();
@@ -31,11 +31,15 @@ public:
 
     void testBankAccountWriteToFile();
 
+    void testBankAccountWriteTransactionToFile();
+
     void testBankAccountReadTransactionsFromFile();
 
     void testBankAccountGetSizeOfTransaction();
 
-    //TODO add functions for new methods
+    void testBankAccountSearchTransactionByType();
+
+    void testBankAccountSearchTransactionByTimestamp();
 
     void runAllTests();
 

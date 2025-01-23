@@ -16,6 +16,8 @@ void clearFile(const string& filename)  {
 
 int main() {
 
+    //TODO check main
+
     clearFile("test_transaction_write.txt"); // pulisce il file
 
     clearFile("test_bankaccount_write.txt"); // pulisce il file

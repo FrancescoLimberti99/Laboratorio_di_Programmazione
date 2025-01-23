@@ -5,6 +5,31 @@
 #include <stdexcept>
 #include <cstdlib>
 
+bool isEarlier(const string& timestamp1, const string& timestamp2) {    // utilizzata in searchTransactionsByTimestamp()
+
+    int day1, month1, year1, hour1, minute1, second1;
+    int day2, month2, year2, hour2, minute2, second2;
+    char delim1, delim2, space1, colon1, colon2;
+    char delim3, delim4, space2, colon3, colon4;
+
+    std::istringstream ss1(timestamp1);
+    ss1 >> day1 >> delim1 >> month1 >> delim2 >> year1 >> space1 >> hour1 >> colon1 >> minute1 >> colon2 >> second1;
+    std::istringstream ss2(timestamp2);
+    ss2 >> day2 >> delim3 >> month2 >> delim4 >> year2 >> space2 >> hour2 >> colon3 >> minute2 >> colon4 >> second2;
+
+    if (year1 != year2)
+        return year1 < year2;
+    if (month1 != month2)
+        return month1 < month2;
+    if (day1 != day2)
+        return day1 < day2;
+    if (hour1 != hour2)
+        return hour1 < hour2;
+    if (minute1 != minute2)
+        return minute1 < minute2;
+    return second1 < second2;
+}
+
 using namespace std;
 
 BankAccount::BankAccount(const string& name, const string& iban, double balance)
@@ -20,6 +45,13 @@ double BankAccount::getBalance() const {
 
 vector<Transaction> BankAccount::getTransactions() const {
     return transactions;
+}
+
+Transaction BankAccount::getTransaction(int a) {
+    if (getSizeOfTransactions() < a) {
+        throw invalid_argument("Non ci sono abbastanza elementi per fornire l'elemento richiesto");
+    }
+    return transactions[a-1];
 }
 
 void BankAccount::writeToFile(const string& filename) const {
@@ -41,6 +73,13 @@ void BankAccount::writeToFile(const string& filename) const {
     } else {
         cerr << "Errore: impossibile aprire il file " << filename << endl;
     }
+}
+
+void BankAccount::writeTransactionToFile(int a, const string& filename) {
+    if (getSizeOfTransactions() < a) {
+        throw invalid_argument("Non ci sono abbastanza elementi per fornire l'elemento richiesto");
+    }
+    transactions[a-1].writeToFile(filename);
 }
 
 void BankAccount::addTransaction(const Transaction& transaction) {
@@ -141,4 +180,45 @@ void BankAccount::readTransactionsFromFile(const string& filename) {
 int BankAccount::getSizeOfTransactions() {
     return transactions.size();
 }
+
+void BankAccount::searchTransactionByType(bool type, const string& filename) {
+    for (const auto& transaction : transactions) {
+        if (transaction.getType() == type) {
+            transaction.writeToFile(filename);
+        }
+    }
+}
+
+void BankAccount::searchTransactionByTimestamp(const string &timestamp, const string& filename) {
+
+    // Controllo validità del timestamp
+    int day, month, year, hour, minute, second;
+    char delim1, delim2, space, colon1, colon2;
+
+    std::istringstream ss(timestamp);
+    ss >> day >> delim1 >> month >> delim2 >> year >> space >> hour >> colon1 >> minute >> colon2 >> second;
+
+    if (ss.fail() || delim1 != '-' || delim2 != '-' || space != ' ' || colon1 != ':' || colon2 != ':') {
+        throw std::invalid_argument("Invalid timestamp format. Expected format: dd-mm-yyyy HH:MM:SS");
+    }
+
+    if (day < 1 || day > 31 || month < 1 || month > 12 || year < 0 ||
+        hour < 0 || hour > 23 || minute < 0 || minute > 59 || second < 0 || second > 59) {
+        throw std::invalid_argument("Invalid timestamp values.");
+    }
+
+    string a;
+    
+    for (const auto& transaction : transactions) {
+        a = transaction.getTimestamp();
+
+        if (isEarlier(a, timestamp)) {    // la funzione isEarlier() è stata definita in alto
+            transaction.writeToFile(filename);
+        }
+
+    }
+}
+
+
+
 

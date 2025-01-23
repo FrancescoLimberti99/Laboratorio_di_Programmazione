@@ -57,12 +57,12 @@ void Transaction::setTimestamp(const string& timestamp) {
     ss >> day >> delim1 >> month >> delim2 >> year >> space >> hour >> colon1 >> minute >> colon2 >> second;
 
     if (ss.fail() || delim1 != '-' || delim2 != '-' || space != ' ' || colon1 != ':' || colon2 != ':') {
-        throw std::invalid_argument("Invalid timestamp format. Expected format: dd-mm-yyyy HH:MM:SS");
+        throw std::invalid_argument("Formato del timestamp non valido");
     }
 
     if (day < 1 || day > 31 || month < 1 || month > 12 || year < 0 ||
         hour < 0 || hour > 23 || minute < 0 || minute > 59 || second < 0 || second > 59) {
-        throw std::invalid_argument("Invalid timestamp values.");
+        throw std::invalid_argument("Valori del timestamp non validi");
     }
 
     // setter

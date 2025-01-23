@@ -17,6 +17,8 @@ void clearFile(const string& filename)  {
 
 int main() {
 
+    //TODO do a better main
+
     clearFile("Write.txt"); // pulisco il file dove scriverò
 
     BankAccount acc1("Arthur Morgan", "IT60X0542811101000000123456", 1000.0); // istanzio il  BankAccount acc1

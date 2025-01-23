@@ -24,6 +24,26 @@ void MyTestSuite::testTransactionTimestamp() {
     std::string initialTimestamp = transaction->getTimestamp();
     transaction->setTimestamp("01-01-2024 12:00:00");
     TS_ASSERT_EQUALS(transaction->getTimestamp(), "01-01-2024 12:00:00");
+
+    // Test eccezioni: formato non valido
+    try {
+        transaction->setTimestamp("ciccio");
+        TS_FAIL("Expected std::invalid_argument was not thrown");
+    } catch (const std::invalid_argument& e) {
+        TS_ASSERT_EQUALS(std::string(e.what()), "Formato del timestamp non valido");
+    } catch (...) {
+        TS_FAIL("Unexpected exception type thrown for invalid format");
+    }
+
+    // Test eccezioni: valori non validi
+    try {
+        transaction->setTimestamp("32-13-2024 12:00:00");
+        TS_FAIL("Expected std::invalid_argument was not thrown");
+    } catch (const std::invalid_argument& e) {
+        TS_ASSERT_EQUALS(std::string(e.what()), "Valori del timestamp non validi");
+    } catch (...) {
+        TS_FAIL("Unexpected exception type thrown for invalid values");
+    }
 }
 
 
@@ -51,17 +71,42 @@ void MyTestSuite::testBankAccountAddTransaction() {
     TS_ASSERT_EQUALS(sender->getSizeOfTransactions(), 1);
 }
 
-void MyTestSuite::testBankAccountSendMoney() { //TODO ASSERT/throw for exceptions
+void MyTestSuite::testBankAccountSendMoney() {
     sender->sendMoney(200.0, *receiver, "prova");
     TS_ASSERT_DELTA(sender->getBalance(), 800.0, 0.01);
     TS_ASSERT_DELTA(receiver->getBalance(), 700.0, 0.01);
     TS_ASSERT_EQUALS(sender->getSizeOfTransactions(), 1);
     TS_ASSERT_EQUALS(receiver->getSizeOfTransactions(), 1);
+
+    // Test eccezioni: negative amount
+    try {
+        sender->sendMoney(-50.0, *receiver, "errore");
+        TS_FAIL("Expected std::invalid_argument was not thrown");
+    } catch (const std::invalid_argument& e) {
+        TS_ASSERT_EQUALS(std::string(e.what()), "L'importo deve essere positivo.");
+    } catch (...) {
+        TS_FAIL("Unexpected exception type thrown for negative amount");
+    }
+
+    // Test eccezioni: amount > balance
+    try {
+        sender->sendMoney(1000.0, *receiver, "errore");
+        TS_FAIL("Expected std::runtime_error was not thrown");
+    } catch (const std::runtime_error& e) {
+        TS_ASSERT_EQUALS(std::string(e.what()), "Saldo insufficiente per inviare il denaro.");
+    } catch (...) {
+        TS_FAIL("Unexpected exception type thrown for amount exceeding balance");
+    }
+
 }
 
 
 void MyTestSuite::testBankAccountWriteToFile() {
     sender->writeToFile("test_bankaccount_write.txt");
+}
+
+void MyTestSuite::testBankAccountWriteTransactionToFile() {
+    sender->writeTransactionToFile(1,"test_bankaccount_write.txt");
 }
 
 
@@ -72,6 +117,14 @@ void MyTestSuite::testBankAccountReadTransactionsFromFile() {
 
 void MyTestSuite::testBankAccountGetSizeOfTransaction() {
     TS_ASSERT_EQUALS(receiver->getSizeOfTransactions(), receiver->getTransactions().size());
+}
+
+void MyTestSuite::testBankAccountSearchTransactionByType() {
+    sender->searchTransactionByType(true,"test_bankaccount_write.txt");
+}
+
+void MyTestSuite::testBankAccountSearchTransactionByTimestamp() {
+    sender->searchTransactionByTimestamp("01-02-2018 12:30:00","test_bankaccount_write.txt");
 }
 
 void MyTestSuite::runAllTests() {
@@ -88,12 +141,16 @@ void MyTestSuite::runAllTests() {
     testBankAccountAddTransaction();
     testBankAccountSendMoney();
     testBankAccountWriteToFile();
+    testBankAccountWriteTransactionToFile();
     testBankAccountReadTransactionsFromFile();
     testBankAccountGetSizeOfTransaction();
+    testBankAccountSearchTransactionByType();
+    testBankAccountSearchTransactionByTimestamp();
 
     tearDown();
 
 }
+
 
 
 

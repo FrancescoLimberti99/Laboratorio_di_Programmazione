@@ -69,16 +69,21 @@ void Transaction::setTimestamp(const string& timestamp) {
     Transaction::timestamp = timestamp;
 }
 
+string Transaction::transactionToString() const {
+    std::ostringstream oss;
+    oss << "Transaction:\n"
+        << "- ID: " << id << "\n"
+        << "- Amount: " << amount << "\n"
+        << "- Type: " << (type ? "Incoming" : "Outgoing") << "\n"
+        << "- Timestamp: " << timestamp << "\n"
+        << "- Motivation: " << motivation;
+    return oss.str();
+}
+
 void Transaction::writeToFile(const string& filename) const {
     ofstream file(filename, ios::app); // classe ofstream per scrivere su file, ios::app significa che è in modalità append (aggiunge in coda)
     if (file.is_open()) {
-        file << "Transaction:" << "\n";
-        file << "- ID: " << id << "\n";
-        file << "- Amount: " << amount << "\n";
-        file << "- Type: " << (type ? "Incoming" : "Outcoming") << "\n";
-        file << "- Timestamp: " << timestamp << "\n";
-        file << "- Motivation: " << motivation << "\n";
-        file << "----------------------" << "\n";
+        file << transactionToString() << "\n----------------------\n";
         file.close();
     } else {
         cerr << "Errore: impossibile aprire il file " << filename << endl;

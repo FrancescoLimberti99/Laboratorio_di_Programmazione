@@ -17,8 +17,6 @@ void clearFile(const string& filename)  {
 
 int main() {
 
-    //TODO do a better main
-
     clearFile("Write.txt"); // pulisco il file dove scriverò
 
     BankAccount acc1("Arthur Morgan", "IT60X0542811101000000123456", 1000.0); // istanzio il  BankAccount acc1
@@ -53,6 +51,17 @@ int main() {
 
     try {
         acc2.sendMoney(100.0, acc1, "resto"); // ac2 invia denaro a acc2
+
+        acc1.writeToFile("Write.txt"); // scrivo su file
+        acc2.writeToFile("Write.txt");
+
+        cout << "Trasferimento completato con successo!" << endl;
+    } catch (const exception& e) {
+        cerr << "Errore durante il trasferimento: " << e.what() << endl;
+    }
+
+    try {
+        acc2.sendMoney(-100.0, acc1, "prova ammontare negativo"); // ac2 invia denaro a acc2
 
         acc1.writeToFile("Write.txt"); // scrivo su file
         acc2.writeToFile("Write.txt");

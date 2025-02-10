@@ -19,9 +19,11 @@ public:
 
     Transaction getTransaction(int a); // getter per la singola transaction
 
+    string bankAccountToString() const; // trasforma il bankaccount in una stringa
+
     void writeToFile(const string& filename) const; // scrive su file
 
-    void writeTransactionToFile(int a, const string& filename);
+    void writeTransactionToFile(int a, const string& filename); // scrive una transazione su file
 
     void addTransaction(const Transaction& transaction); // aggiunge una transaction all'attributo transactions
 

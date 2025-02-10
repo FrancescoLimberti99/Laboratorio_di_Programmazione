@@ -26,6 +26,8 @@ public:
 
     void setMotivation(const string &motivation); // setter per attributo motivation
 
+    string transactionToString() const; // trasforma le info di una transazione in una stringa
+
     void writeToFile(const string& filename) const; // scrive la transazione sul file
 
     void modifyTransaction(double amount, const string& timestamp, const string& motivation ); // modifica la transazione

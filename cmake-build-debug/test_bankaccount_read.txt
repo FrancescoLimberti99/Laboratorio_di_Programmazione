@@ -8,6 +8,6 @@ Transaction:
 Transaction: 
 - ID: 98765
 - Amount: 800
-- Type: Outcoming
+- Type: Outgoing
 - Timestamp: 28-11-2024 16:17:45
 - Motivation: rimborso

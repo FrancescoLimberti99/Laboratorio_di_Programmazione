@@ -46,6 +46,17 @@ void MyTestSuite::testTransactionTimestamp() {
     }
 }
 
+void MyTestSuite::testTransactionTransactionToString() {
+
+    std::string expected = "Transaction:\n"
+                           "- ID: 12345\n"
+                           "- Amount: 300.0\n"
+                           "- Type: Incoming\n"
+                           "- Timestamp: " + transaction->getTimestamp() + "\n"
+                           "- Motivation: spesa";
+
+    TS_ASSERT_EQUALS(transaction->transactionToString(), expected);
+}
 
 void MyTestSuite::testTransactionWriteToFile() {
     transaction->writeToFile("test_transaction_write.txt");
@@ -100,6 +111,22 @@ void MyTestSuite::testBankAccountSendMoney() {
 
 }
 
+void MyTestSuite::testBankAccountBankAccountToString() {
+
+    std::string expected = "Bank Account:\n"
+                           "-- General Info:\n"
+                           "IBAN: IT60X0542811101000000123456\n"
+                           "Balance: 1300.0\n"
+                           "-- Transactions:\n"
+                           "Transaction:\n"
+                           "- ID: 12345\n"
+                           "- Amount: 300.0\n"
+                           "- Type: Incoming\n"
+                           "- Timestamp: " + sender->getTransaction(1).getTimestamp() + "\n"
+                           "- Motivation: spesa";
+
+    TS_ASSERT_EQUALS(sender->bankAccountToString(), expected);
+}
 
 void MyTestSuite::testBankAccountWriteToFile() {
     sender->writeToFile("test_bankaccount_write.txt");
@@ -128,17 +155,20 @@ void MyTestSuite::testBankAccountSearchTransactionByTimestamp() {
 }
 
 void MyTestSuite::runAllTests() {
+
     setUp();
 
     //Transaction tests
     testTransactionConstructor();
     testTransactionTimestamp();
+    testTransactionTransactionToString();
     testTransactionWriteToFile();
     testTransactionModifyTransaction();
 
     //BankAccount tests
     testBankAccountConstructor();
     testBankAccountAddTransaction();
+    testBankAccountBankAccountToString();
     testBankAccountSendMoney();
     testBankAccountWriteToFile();
     testBankAccountWriteTransactionToFile();
@@ -150,6 +180,9 @@ void MyTestSuite::runAllTests() {
     tearDown();
 
 }
+
+
+
 
 
 

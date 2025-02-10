@@ -54,18 +54,25 @@ Transaction BankAccount::getTransaction(int a) {
     return transactions[a-1];
 }
 
+string BankAccount::bankAccountToString() const {
+    std::ostringstream oss;
+    oss << "Bank Account:\n"
+        << "-- General Info:" << "\n"
+        << "IBAN: " << iban << "\n"
+        << "Balance: " << balance << "\n"
+        << "-- Transactions:" << "\n";
+
+        for (const auto& transaction : transactions) {
+            oss << transaction.transactionToString() << "\n";
+        }
+    return oss.str();
+}
+
 void BankAccount::writeToFile(const string& filename) const {
     ofstream file(filename, ios::app); // classe ofstream per scrivere su file, ios::app significa che è in modalità append (aggiunge)
     if (file.is_open()) {
-        file << "Bank Account:" << "\n";
-        file << "-- General Info:" << "\n";
-        file << "IBAN: " << iban << "\n";
-        file << "Balance: " << balance << "\n";
-        file << "-- Transactions:" << "\n";
-
-        for (const auto& transaction : transactions) {
-            transaction.writeToFile(filename);
-        }
+        file << bankAccountToString() << "\n----------------------\n";
+        file.close();
 
         file << "----------------------" << "\n";
         file << "----------------------" << "\n";
@@ -218,6 +225,8 @@ void BankAccount::searchTransactionByTimestamp(const string &timestamp, const st
 
     }
 }
+
+
 
 
 

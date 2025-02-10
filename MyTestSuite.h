@@ -18,6 +18,8 @@ public:
 
     void testTransactionTimestamp();
 
+    void testTransactionTransactionToString();
+
     void testTransactionWriteToFile();
 
     void testTransactionModifyTransaction();
@@ -28,6 +30,8 @@ public:
     void testBankAccountAddTransaction();
 
     void testBankAccountSendMoney();
+
+    void testBankAccountBankAccountToString();
 
     void testBankAccountWriteToFile();
 

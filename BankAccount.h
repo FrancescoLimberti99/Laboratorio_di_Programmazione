@@ -17,13 +17,13 @@ public:
 
     vector<Transaction> getTransactions() const; // getter per l'attributo transactions
 
-    Transaction getTransaction(int a); // getter per la singola transaction
+    Transaction getTransaction(int a); // getter per la singola transaction ** RICHIESTA DURANTE REVISIONE
 
-    string bankAccountToString() const; // trasforma il bankaccount in una stringa
+    string bankAccountToString() const; // trasforma il bankaccount in una stringa ** RICHIESTA DURANTE REVISIONE
 
     void writeToFile(const string& filename) const; // scrive su file
 
-    void writeTransactionToFile(int a, const string& filename); // scrive una transazione su file
+    void writeTransactionToFile(int a, const string& filename); // scrive una transazione su file ** RICHIESTA DURANTE REVISIONE
 
     void addTransaction(const Transaction& transaction); // aggiunge una transaction all'attributo transactions
 
@@ -31,14 +31,14 @@ public:
 
     void readTransactionsFromFile(const string& filename); // legge da file una transaction, la costruisce e la inserisce nell'attributo transactions
 
-    int getSizeOfTransactions();
+    int getSizeOfTransactions(); // restituisce dimensione vettore delle transazioni ** RICHIESTA DURANTE REVISIONE
 
-    void searchTransactionByType(bool type, const string& filename); // scrive su file tutte le transaction del tipo richiesto
+    void searchTransactionByType(bool type, const string& filename); // scrive su file tutte le transaction del tipo richiesto ** RICHIESTA DURANTE REVISIONE
 
-    void searchTransactionByTimestamp(const string& timestamp, const string& filename); // scrive su file tutte le transaction antecedenti al timestamp passato come argomento
+    void searchTransactionByTimestamp(const string& timestamp, const string& filename); // scrive su file tutte le transaction antecedenti al timestamp passato come argomento ** RICHIESTA DURANTE REVISIONE
 
 private:
-    string name;
+    string name; // ** RICHIESTA DURANTE REVISIONE
     string iban;
     double balance;
     vector<Transaction> transactions;

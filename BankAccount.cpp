@@ -2,6 +2,7 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
+#include <iomanip>
 #include <stdexcept>
 #include <cstdlib>
 
@@ -72,11 +73,10 @@ void BankAccount::writeToFile(const string& filename) const {
     ofstream file(filename, ios::app); // classe ofstream per scrivere su file, ios::app significa che è in modalità append (aggiunge)
     if (file.is_open()) {
         file << bankAccountToString() << "\n----------------------\n";
+        file << "----------------------" << "\n";
+        file << "----------------------" << "\n";
         file.close();
 
-        file << "----------------------" << "\n";
-        file << "----------------------" << "\n";
-        file.close();
     } else {
         cerr << "Errore: impossibile aprire il file " << filename << endl;
     }
@@ -155,7 +155,8 @@ void BankAccount::readTransactionsFromFile(const string& filename) {
             ss.clear();
             ss.str(line);
             ss >> temp >> temp;
-            getline(ss, timestamp); // estrae timestamp della transaction
+            getline(ss >> std::ws, timestamp); // estrae timestamp della transaction
+            // std::cout << timestamp << std::endl;
 
             getline(file, line); // riga successiva
             ss.clear();
@@ -199,19 +200,18 @@ void BankAccount::searchTransactionByType(bool type, const string& filename) {
 void BankAccount::searchTransactionByTimestamp(const string &timestamp, const string& filename) {
 
     // Controllo validità del timestamp
-    int day, month, year, hour, minute, second;
-    char delim1, delim2, space, colon1, colon2;
-
+    std::tm tm = {};
     std::istringstream ss(timestamp);
-    ss >> day >> delim1 >> month >> delim2 >> year >> space >> hour >> colon1 >> minute >> colon2 >> second;
 
-    if (ss.fail() || delim1 != '-' || delim2 != '-' || space != ' ' || colon1 != ':' || colon2 != ':') {
-        throw std::invalid_argument("Invalid timestamp format. Expected format: dd-mm-yyyy HH:MM:SS");
+    ss >> std::get_time(&tm, "%d-%m-%Y %H:%M:%S");
+
+    if (ss.fail()) {
+        throw std::invalid_argument("Formato del timestamp non valido");
     }
 
-    if (day < 1 || day > 31 || month < 1 || month > 12 || year < 0 ||
-        hour < 0 || hour > 23 || minute < 0 || minute > 59 || second < 0 || second > 59) {
-        throw std::invalid_argument("Invalid timestamp values.");
+    tm.tm_isdst = -1;  // Lascia che il sistema decida se è ora legale
+    if (mktime(&tm) == -1) {
+        throw std::invalid_argument("Valori del timestamp non validi");
     }
 
     string a;

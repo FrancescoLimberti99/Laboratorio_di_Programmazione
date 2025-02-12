@@ -49,19 +49,18 @@ void Transaction::setMotivation(const string &motivation) {
 
 void Transaction::setTimestamp(const string& timestamp) {
 
-    // Controllo validità del nuovo timestamp
-    int day, month, year, hour, minute, second;
-    char delim1, delim2, space, colon1, colon2;
-
+    // Controllo validità del nuovo timestamp ** RICHIESTA DURANTE REVISIONE
+    std::tm tm = {};
     std::istringstream ss(timestamp);
-    ss >> day >> delim1 >> month >> delim2 >> year >> space >> hour >> colon1 >> minute >> colon2 >> second;
 
-    if (ss.fail() || delim1 != '-' || delim2 != '-' || space != ' ' || colon1 != ':' || colon2 != ':') {
+    ss >> std::get_time(&tm, "%d-%m-%Y %H:%M:%S");
+
+    if (ss.fail()) {
         throw std::invalid_argument("Formato del timestamp non valido");
     }
 
-    if (day < 1 || day > 31 || month < 1 || month > 12 || year < 0 ||
-        hour < 0 || hour > 23 || minute < 0 || minute > 59 || second < 0 || second > 59) {
+    tm.tm_isdst = -1;  // Lascia che il sistema decida se è ora legale
+    if (mktime(&tm) == -1) {
         throw std::invalid_argument("Valori del timestamp non validi");
     }
 

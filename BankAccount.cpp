@@ -48,7 +48,7 @@ vector<Transaction> BankAccount::getTransactions() const {
     return transactions;
 }
 
-Transaction BankAccount::getTransaction(int a) {
+Transaction BankAccount::getTransaction(int a) const {
     if (getSizeOfTransactions() < a) {
         throw invalid_argument("Non ci sono abbastanza elementi per fornire l'elemento richiesto");
     }
@@ -185,11 +185,11 @@ void BankAccount::readTransactionsFromFile(const string& filename) {
     file.close();
 }
 
-int BankAccount::getSizeOfTransactions() {
+int BankAccount::getSizeOfTransactions() const {
     return transactions.size();
 }
 
-void BankAccount::searchTransactionByType(bool type, const string& filename) {
+void BankAccount::searchTransactionByType(bool type, const string& filename) const {
     for (const auto& transaction : transactions) {
         if (transaction.getType() == type) {
             transaction.writeToFile(filename);
@@ -197,7 +197,7 @@ void BankAccount::searchTransactionByType(bool type, const string& filename) {
     }
 }
 
-void BankAccount::searchTransactionByTimestamp(const string &timestamp, const string& filename) {
+void BankAccount::searchTransactionByTimestamp(const string &timestamp, const string& filename) const {
 
     // Controllo validità del timestamp
     std::tm tm = {};

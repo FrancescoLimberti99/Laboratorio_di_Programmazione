@@ -8,27 +8,18 @@
 
 bool isEarlier(const string& timestamp1, const string& timestamp2) {    // utilizzata in searchTransactionsByTimestamp()
 
-    int day1, month1, year1, hour1, minute1, second1;
-    int day2, month2, year2, hour2, minute2, second2;
-    char delim1, delim2, space1, colon1, colon2;
-    char delim3, delim4, space2, colon3, colon4;
+    std::tm tm1 = {}, tm2 = {};
+    std::istringstream ss1(timestamp1), ss2(timestamp2);
 
-    std::istringstream ss1(timestamp1);
-    ss1 >> day1 >> delim1 >> month1 >> delim2 >> year1 >> space1 >> hour1 >> colon1 >> minute1 >> colon2 >> second1;
-    std::istringstream ss2(timestamp2);
-    ss2 >> day2 >> delim3 >> month2 >> delim4 >> year2 >> space2 >> hour2 >> colon3 >> minute2 >> colon4 >> second2;
+    ss1 >> std::get_time(&tm1, "%d-%m-%Y %H:%M:%S");
+    ss2 >> std::get_time(&tm2, "%d-%m-%Y %H:%M:%S");
 
-    if (year1 != year2)
-        return year1 < year2;
-    if (month1 != month2)
-        return month1 < month2;
-    if (day1 != day2)
-        return day1 < day2;
-    if (hour1 != hour2)
-        return hour1 < hour2;
-    if (minute1 != minute2)
-        return minute1 < minute2;
-    return second1 < second2;
+    if (ss1.fail() || ss2.fail()) {
+        throw std::invalid_argument("Formato del timestamp non valido");
+    }
+
+    return std::mktime(&tm1) < std::mktime(&tm2);
+
 }
 
 using namespace std;

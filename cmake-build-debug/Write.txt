@@ -5,18 +5,20 @@ Balance: 1000
 -- Transactions:
 
 ----------------------
+----------------------
+----------------------
 Transaction:
 - ID: 12345
 - Amount: 300
 - Type: Incoming
-- Timestamp: 12-02-2025 22:28:33
+- Timestamp: 21-02-2025 00:01:32
 - Motivation: rimborso
 ----------------------
 Transaction:
 - ID: 56789
 - Amount: 100
 - Type: Outgoing
-- Timestamp: 12-02-2025 22:28:34
+- Timestamp: 21-02-2025 00:01:32
 - Motivation: multa
 ----------------------
 Bank Account:
@@ -28,15 +30,17 @@ Transaction:
 - ID: 12345
 - Amount: 300
 - Type: Incoming
-- Timestamp: 12-02-2025 22:28:33
+- Timestamp: 21-02-2025 00:01:32
 - Motivation: rimborso
 Transaction:
 - ID: 56789
 - Amount: 100
 - Type: Outgoing
-- Timestamp: 12-02-2025 22:28:34
+- Timestamp: 21-02-2025 00:01:32
 - Motivation: multa
 
+----------------------
+----------------------
 ----------------------
 Bank Account:
 -- General Info:
@@ -44,6 +48,8 @@ IBAN: IT60X0542811101000000654321
 Balance: 500
 -- Transactions:
 
+----------------------
+----------------------
 ----------------------
 Bank Account:
 -- General Info:
@@ -54,21 +60,23 @@ Transaction:
 - ID: 12345
 - Amount: 300
 - Type: Incoming
-- Timestamp: 12-02-2025 22:28:33
+- Timestamp: 21-02-2025 00:01:32
 - Motivation: rimborso
 Transaction:
 - ID: 56789
 - Amount: 100
 - Type: Outgoing
-- Timestamp: 12-02-2025 22:28:34
+- Timestamp: 21-02-2025 00:01:32
 - Motivation: multa
 Transaction:
 - ID: 10041
 - Amount: 200
 - Type: Outgoing
-- Timestamp: 12-02-2025 22:28:34
+- Timestamp: 21-02-2025 00:01:32
 - Motivation: acquisto
 
+----------------------
+----------------------
 ----------------------
 Bank Account:
 -- General Info:
@@ -79,9 +87,11 @@ Transaction:
 - ID: 10041
 - Amount: 200
 - Type: Incoming
-- Timestamp: 12-02-2025 22:28:34
+- Timestamp: 21-02-2025 00:01:32
 - Motivation: acquisto
 
+----------------------
+----------------------
 ----------------------
 Bank Account:
 -- General Info:
@@ -92,27 +102,29 @@ Transaction:
 - ID: 12345
 - Amount: 300
 - Type: Incoming
-- Timestamp: 12-02-2025 22:28:33
+- Timestamp: 21-02-2025 00:01:32
 - Motivation: rimborso
 Transaction:
 - ID: 56789
 - Amount: 100
 - Type: Outgoing
-- Timestamp: 12-02-2025 22:28:34
+- Timestamp: 21-02-2025 00:01:32
 - Motivation: multa
 Transaction:
 - ID: 10041
 - Amount: 200
 - Type: Outgoing
-- Timestamp: 12-02-2025 22:28:34
+- Timestamp: 21-02-2025 00:01:32
 - Motivation: acquisto
 Transaction:
 - ID: 28467
 - Amount: 100
 - Type: Incoming
-- Timestamp: 12-02-2025 22:28:34
+- Timestamp: 21-02-2025 00:01:32
 - Motivation: resto
 
+----------------------
+----------------------
 ----------------------
 Bank Account:
 -- General Info:
@@ -123,15 +135,17 @@ Transaction:
 - ID: 10041
 - Amount: 200
 - Type: Incoming
-- Timestamp: 12-02-2025 22:28:34
+- Timestamp: 21-02-2025 00:01:32
 - Motivation: acquisto
 Transaction:
 - ID: 28467
 - Amount: 100
 - Type: Outgoing
-- Timestamp: 12-02-2025 22:28:34
+- Timestamp: 21-02-2025 00:01:32
 - Motivation: resto
 
+----------------------
+----------------------
 ----------------------
 Bank Account:
 -- General Info:
@@ -151,4 +165,6 @@ Transaction:
 - Timestamp: 28-11-2024 16:17:45
 - Motivation:  rimborso
 
+----------------------
+----------------------
 ----------------------

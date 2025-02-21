@@ -82,3 +82,7 @@
 9	1181	7610989106671480	CMakeFiles/Elaborato.dir/Transaction.cpp.obj	c0280adf32bd507c
 15	1257	7610989106730410	CMakeFiles/Elaborato.dir/BankAccount.cpp.obj	a176db247f4c9e30
 1258	1750	7610989119158486	Elaborato.exe	bf38b9205b521fb4
+38	1255	7617956785161134	CMakeFiles/Elaborato.dir/main.cpp.obj	10b47a9d66407663
+96	1396	7617956785733701	CMakeFiles/Elaborato.dir/Transaction.cpp.obj	c0280adf32bd507c
+112	1496	7617956785897601	CMakeFiles/Elaborato.dir/BankAccount.cpp.obj	a176db247f4c9e30
+1496	2226	7617956799732210	Elaborato.exe	bf38b9205b521fb4

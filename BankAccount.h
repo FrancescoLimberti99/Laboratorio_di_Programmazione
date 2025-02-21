@@ -15,8 +15,6 @@ public:
 
     double getBalance() const; // getter per l'attributo balance
 
-    vector<Transaction> getTransactions() const; // getter per l'attributo transactions
-
     Transaction getTransaction(int a) const; // getter per la singola transaction ** RICHIESTA DURANTE REVISIONE
 
     string bankAccountToString() const; // trasforma il bankaccount in una stringa ** RICHIESTA DURANTE REVISIONE
@@ -33,9 +31,9 @@ public:
 
     int getSizeOfTransactions() const; // restituisce dimensione vettore delle transazioni ** RICHIESTA DURANTE REVISIONE
 
-    void searchTransactionByType(bool type, const string& filename) const; // scrive su file tutte le transaction del tipo richiesto ** RICHIESTA DURANTE REVISIONE
+    vector<Transaction> searchTransactionByType(bool type) const; // scrive su file tutte le transaction del tipo richiesto ** RICHIESTA DURANTE REVISIONE
 
-    void searchTransactionByTimestamp(const string& timestamp, const string& filename) const; // scrive su file tutte le transaction antecedenti al timestamp passato come argomento ** RICHIESTA DURANTE REVISIONE
+    vector<Transaction> searchTransactionByTimestamp(const string& timestamp) const; // scrive su file tutte le transaction antecedenti al timestamp passato come argomento ** RICHIESTA DURANTE REVISIONE
 
 private:
     string name; // ** RICHIESTA DURANTE REVISIONE

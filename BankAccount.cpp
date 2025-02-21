@@ -35,10 +35,6 @@ double BankAccount::getBalance() const {
     return balance;
 }
 
-vector<Transaction> BankAccount::getTransactions() const {
-    return transactions;
-}
-
 Transaction BankAccount::getTransaction(int a) const {
     if (getSizeOfTransactions() < a) {
         throw invalid_argument("Non ci sono abbastanza elementi per fornire l'elemento richiesto");
@@ -180,15 +176,17 @@ int BankAccount::getSizeOfTransactions() const {
     return transactions.size();
 }
 
-void BankAccount::searchTransactionByType(bool type, const string& filename) const {
+vector<Transaction> BankAccount::searchTransactionByType(bool type) const {
+    vector<Transaction> result;
     for (const auto& transaction : transactions) {
         if (transaction.getType() == type) {
-            transaction.writeToFile(filename);
+            result.push_back(transaction);;
         }
     }
+    return result;
 }
 
-void BankAccount::searchTransactionByTimestamp(const string &timestamp, const string& filename) const {
+vector<Transaction> BankAccount::searchTransactionByTimestamp(const string &timestamp) const {
 
     // Controllo validità del timestamp
     std::tm tm = {};
@@ -205,16 +203,16 @@ void BankAccount::searchTransactionByTimestamp(const string &timestamp, const st
         throw std::invalid_argument("Valori del timestamp non validi");
     }
 
-    string a;
+    vector<Transaction> result;
     
     for (const auto& transaction : transactions) {
-        a = transaction.getTimestamp();
-
-        if (isEarlier(a, timestamp)) {    // la funzione isEarlier() è stata definita in alto
-            transaction.writeToFile(filename);
+        if (isEarlier(transaction.getTimestamp(), timestamp)) {    // la funzione isEarlier() è stata definita in alto
+            result.push_back(transaction);
         }
 
     }
+
+    return result;
 }
 
 

@@ -32,8 +32,6 @@ public:
 
     void modifyTransaction(double amount, const string& timestamp, const string& motivation ); // modifica la transazione ** RICHIESTA DURANTE REVISIONE
 
-    virtual ~Transaction(); // ** RICHIESTA DURANTE REVISIONE
-
 private:
     int id;
     double amount;

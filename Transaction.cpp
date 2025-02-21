@@ -95,7 +95,6 @@ void Transaction::modifyTransaction(double amount, const string &timestamp, cons
     setMotivation(motivation);
 }
 
-Transaction::~Transaction() {}
 
 
 

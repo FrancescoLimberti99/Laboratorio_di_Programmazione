@@ -1,4 +1,22 @@
+#include <ctime>
+#include <iomanip>
 #include "MyTestSuite.h"
+
+bool isEarlier(const string& timestamp1, const string& timestamp2) {    // utilizzata in searchTransactionsByTimestamp()
+
+    std::tm tm1 = {}, tm2 = {};
+    std::istringstream ss1(timestamp1), ss2(timestamp2);
+
+    ss1 >> std::get_time(&tm1, "%d-%m-%Y %H:%M:%S");
+    ss2 >> std::get_time(&tm2, "%d-%m-%Y %H:%M:%S");
+
+    if (ss1.fail() || ss2.fail()) {
+        throw std::invalid_argument("Formato del timestamp non valido");
+    }
+
+    return std::mktime(&tm1) < std::mktime(&tm2);
+
+}
 
 void MyTestSuite::setUp() {
     transaction = new Transaction(12345, 300.0, true, "spesa");
@@ -128,11 +146,11 @@ void MyTestSuite::testBankAccountBankAccountToString() {
     TS_ASSERT_EQUALS(sender->bankAccountToString(), expected);
 }
 
-void MyTestSuite::testBankAccountWriteToFile() {
+void MyTestSuite::testBankAccountWriteToFile() {                     // evitabili,  se funzionano i toString() funziona
     sender->writeToFile("test_bankaccount_write.txt");
 }
 
-void MyTestSuite::testBankAccountWriteTransactionToFile() {
+void MyTestSuite::testBankAccountWriteTransactionToFile() {                    // evitabili, se funzionano i toString() funziona
     sender->writeTransactionToFile(1,"test_bankaccount_write.txt");
 }
 
@@ -142,16 +160,43 @@ void MyTestSuite::testBankAccountReadTransactionsFromFile() {
     TS_ASSERT(sender->getSizeOfTransactions() > 0); // Supponendo che il file contenga transazioni.
 }
 
-void MyTestSuite::testBankAccountGetSizeOfTransaction() {
-    TS_ASSERT_EQUALS(receiver->getSizeOfTransactions(), receiver->getTransactions().size());
-}
-
 void MyTestSuite::testBankAccountSearchTransactionByType() {
-    sender->searchTransactionByType(true,"test_bankaccount_write.txt");
+    vector<Transaction> result = sender->searchTransactionByType(true);
+
+    for (const auto& transaction : result) {
+        TS_ASSERT(transaction.getType() == true);
+    }
+
+    int totalTransactions = sender->getSizeOfTransactions();
+    int expectedCount = 0;
+
+    for (int i = 0; i < totalTransactions; i++) {
+        if (sender->getTransaction(i).getType()) {
+            expectedCount++;
+        }
+    }
+
+    TS_ASSERT_EQUALS(result.size(), expectedCount);
 }
 
 void MyTestSuite::testBankAccountSearchTransactionByTimestamp() {
-    sender->searchTransactionByTimestamp("01-02-2018 12:30:00","test_bankaccount_write.txt");
+    vector<Transaction> result = sender->searchTransactionByTimestamp("01-02-2018 12:30:00");
+
+    for (const auto& transaction : result) {
+        TS_ASSERT(isEarlier(transaction.getTimestamp(), "01-02-2018 12:30:00"));
+    }
+
+    int totalTransactions = sender->getSizeOfTransactions(); // Supponendo esista
+    int expectedCount = 0;
+
+    for (int i = 0; i < totalTransactions; i++) {
+        if (isEarlier(sender->getTransaction(i).getTimestamp(), "01-02-2018 12:30:00")) {
+            expectedCount++;
+        }
+    }
+
+    TS_ASSERT_EQUALS(result.size(), expectedCount);
+
 }
 
 void MyTestSuite::runAllTests() {

@@ -1,5 +1,5 @@
 # Laboratorio di Programmazione
-## Francesco Limberti - 7009016
+## Francesco Limberti
 
 Elaborato n.9
 
